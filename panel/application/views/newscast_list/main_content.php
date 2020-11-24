@@ -35,11 +35,11 @@
                     <span class="tools">            
                         <a class="icon-chevron-down" href="javascript:;"></a>
                         <a class="btn btn-mini btn-success" 
-                        href="<?php echo base_url("newscast/editPage/$newscast->id") ?>">
+                        href="<?php echo base_url("newscast/editPage/$newscast->newcastid") ?>">
                         <i class="icon-pencil"></i>
                     </a>       
-                    <a class="btn btn-mini btn-success" 
-                    href="<?php echo base_url("newscast/delete/$newscast->id") ?>">
+                    <a class="btn btn-mini btn-success" onclick="return confirm('Silmek istediginizden emin misiniz ?');"
+                    href="<?php echo base_url("newscast/delete/$newscast->newcastid") ?>">
                     <i class="icon-trash"></i>
                 </a>        
                 
@@ -57,7 +57,7 @@
             data-offstyle="danger"
             type="checkbox"
             data-toggle="toggle"
-            dataID="<?php echo $newscast->id; ?>"
+            dataID="<?php echo $newscast->newcastid; ?>"
             <?php echo ($newscast->isActive == 1) ? "checked" : ""; ?>
             >          
         </p>

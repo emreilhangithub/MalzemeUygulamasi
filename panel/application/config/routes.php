@@ -92,5 +92,14 @@ $route["newscast/(.*)"] = "newscast/$1";
 $route["kategori"] = "kategori/index";
 $route["kategori/(.*)"] = "kategori/$1";
 
+$route["user"] = "user/index";
+$route["user/(.*)"] = "user/$1";
+
+$route["basket"] = "basket/index";
+$route["basket/(.*)"] = "basket/$1";
+
+$route["receivedorder"] = "receivedorder/index";
+$route["receivedorder/(.*)"] = "receivedorder/$1";
+
 
 $route["^(.*)"] = "index/$1";

@@ -3,6 +3,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Order extends CI_Controller {
 
+	public function __construct()
+	{
+		parent::__construct();
+
+		if (!$this->session->userdata("oturum_data")) {  
+			$this->session->set_flashdata("login_hata","Sayfalara Erişebilmek İçin Giriş Yap"); 
+			redirect(base_url().'login'); 
+		}
+
+		date_default_timezone_set('Etc/GMT-3');
+
+	}
+
 
 
 	public function index()
@@ -37,97 +50,83 @@ class Order extends CI_Controller {
 
 	{
 
-		$data = array(
-			'invoice' =>  $this->input->post('invoice'), 
-			'detail' =>  $this->input->post('detail'),
-			'quantity' =>  $this->input->post('quantity'),
-			'price' =>  $this->input->post('price'),
-			'total_price' =>  $this->input->post('quantity') * $this->input->post('price'),
-			'date' =>  date("Y-m-d"),
-			'product_id' =>  $this->input->post('product_id'),
-			'supplier_id' =>  $this->input->post('supplier_id')
-		);	   
+         //  echo "<pre>";
+         // print_r($this->input->post());
+         // exit;
+        /* Satınalma siparişi oluşturma başlangıç */
 
-			$invoice =  $this->input->post('invoice');
-			$product_id = $this->input->post("product_id");
-			$quantity = $this->input->post("quantity");
-			$price = $this->input->post("price");
-			$product_id  = $this->input->post('product_id');
-			$supplier_id  = $this->input->post('supplier_id');
+        $products = $this->input->post('product_id');
+        $quantities = $this->input->post('quantity');
+        $prices = $this->input->post('price');
+        $totalPrice = 0;
+        $orderLines = array();
+        foreach($products as $key=>$pro)
+        {
+            $totalPrice += $prices[$key]*$quantities[$key];
+            $orderLines[$key]["productId"]=$pro;
+            $orderLines[$key]["price"]=$prices[$key];
+            $orderLines[$key]["quantity"]=$quantities[$key];
+        }
+        $data = array(
+            'invoice' =>  $this->input->post('invoice'),
+            'detail' =>  $this->input->post('detail'),
+            'date' =>  date('d.m.Y H:i:s'),
+            'total_price'=>$totalPrice,
+            'supplier_id'=>$this->input->post('supplier_id')
+        );
+        
+       //  echo "<pre>";
+       // print_r($data);
+       // exit;
 
-			$product = $this->db->where("id",$product_id)->get("product")->row(); 
+        $insert = $this->db->insert("order",$data);
+        $insertId = $this->db->insert_id();
+        if($insertId>0)
+        {
+            foreach($products as $key=>$pro)
+            {
 
-		    $old_quantity = $product->quantity;
-		    $new_quantity = $old_quantity - $quantity;
-		    $newadd_quantity = $old_quantity + $quantity;
-			
+                $orderLines[$key]["productId"]=$pro;
+                $orderLines[$key]["price"]=$prices[$key];
+                $orderLines[$key]["quantity"]=$quantities[$key];
+                $orderLines[$key]["salid"]=$insertId;
+            }
 
-		   	echo "Eski Miktar = "; print_r($old_quantity); echo "<br>"; 			
-		    echo "Girilen Miktar =";  print_r($quantity); echo "<br>";
-		    echo "Yeni Olacak Miktar =  "; print_r($new_quantity); echo "<br>";
-
-
-		    if ($old_quantity<=$quantity) {
-
-		   	$alis = array(
-			'invoice' =>  $invoice, 
-			'detail' =>  "stok yetmedi",
-			'quantity' =>  $quantity,
-			'price' =>  $price,
-			'total_price' =>  $quantity*$price,
-			'date' =>  date("Y-m-d"),
-			'product_id' =>  $product_id,
-			'supplier_id' =>  $supplier_id
-		    );
-
-		   	//$this->db->insert("purchase",$alis);
-		   	
-		     $insert = $this->db->insert("purchase",$alis);
-
-		     if ($insert) {
-		     	 $newdata = array(
-		    	"quantity"   => $newadd_quantity,
-		    	"sale_price" => $price
-							    );
-
-				    $update = $this->db->where("id",$product_id)->update("product",$newdata);
-		     	redirect(base_url("purchase"));
-		     }
-
-		     else{
-				echo "alış faturası  işlemi yapılmaadı hata var";
-				}
+            $this->db->insert_batch("sales",$orderLines);
+             $this->session->set_flashdata("eklemebasarili","Ekleme İşlemi Yapıldı"); 
+            redirect(base_url("order"));
+        }
+        /* Satınalma siparişi oluşturma bitiş */
 
 
-		   	}
+        if ($insert) {
 
-		   	else{
+            //burda ürün idsine göre seçilen ürünün ozelliklerini ekrana bastık
+            $product_id = $this->input->post("product_id");
+            $quantity = $this->input->post("quantity");
+            $price = $this->input->post("price");
 
-		   		$insert = $this->db->insert("order",$data);
+            $product = $this->db->where("id",$product_id)->get("order")->row();
 
+            $old_quantity = $product->quantity;
+            $new_quantity = $old_quantity + $quantity;
 
-					if ($insert) {  
-					 $data = array(
-		    	"quantity"   => $new_quantity,
-		    	"sale_price" => $price
-							    );
+            $data = array(
+                "quantity"   => $new_quantity,
+                "list_price" => $price
+            );
 
-				    $update = $this->db->where("id",$product_id)->update("product",$data);
-					
-					redirect(base_url("order"));
-		               
-						}
+            $update = $this->db->where("id",$product_id)->update("product",$data);
 
-						else{
-							echo "satış işlemi yapılmaadı hata var";
-						}    
+           
+            redirect(base_url("order"));
 
+        }
 
-
-		  
-		  	 	}    	
-               
-		
+        else{
+        	redirect(base_url("order/newPage"));
+            echo "basarısız";
+        }
 
 		
 	}		
@@ -142,6 +141,7 @@ class Order extends CI_Controller {
 		$delete = $this->db->delete("order",array('id' => $id ));
 
 		if ($delete) {
+			$this->session->set_flashdata("silmebasarili","Silme İşlemi Yapıldı");  
 			redirect(base_url("order"));
 		}
 		else{
@@ -210,6 +210,33 @@ class Order extends CI_Controller {
 	}
 
 
+    public function detail($id)
+
+    {       
+
+        $rows = $this->db->query("SELECT *
+		FROM `order` 
+		INNER JOIN supplier ON supplier.supplierid = order.supplier_id 
+		WHERE order.id=$id")->result();
+		
+  		$sales = $this->db->query("SELECT *
+		FROM `sales`
+		INNER JOIN product ON product.productid = sales.productId  		 
+		WHERE sales.salid=$id")->result();
+
+		$viewData = array('rows' => $rows,
+			'sales' => $sales
+		);
+
+		// echo "<pre>";
+  //      print_r($viewData);
+  //      exit;
+
+		 $this->load->view("orderdetail_list",$viewData);
+
+    }
+
+	 
 
 
 } 

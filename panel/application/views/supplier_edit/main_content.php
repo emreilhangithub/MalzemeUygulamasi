@@ -5,7 +5,7 @@
 <div class="row-fluid">
 
     <!-- BEGIN FORM-->
-    <form action="<?php echo base_url("supplier/update/$supplier->id"); ?>"
+    <form action="<?php echo base_url("supplier/update/$supplier->supplierid"); ?>"
        class="form-horizontal" method="post">
 
 

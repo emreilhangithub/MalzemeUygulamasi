@@ -8,14 +8,29 @@
     <form action="<?php echo base_url("supplier/AuthorizedUpdate/$listele->id"); ?>"
        class="form-horizontal" method="post">
 
-        <div class="control-group">
-        <label class="control-label">Firma Adı(*)</label>
-        <div class="controls">
-            <input type="text" class="span6 " name="supplier_id" required="" 
-            value="<?php echo $listele->supplier_id; ?>" 
-            />
+
+       <div class="control-group">
+                        <label class="control-label">Firma(*)</label>
+                        <div class="controls">
+
+                <select type="text" class="span6" name="supplier_id" >             
+            
+            <option value="<?php echo $listele->supplier_id; ?>"> <?php echo $listele->title; ?> </option>
+
+              <?php foreach ($suppliers as $supplier) { ?>
+
+                                <option value="<?php echo $supplier->supplierid; ?>"> 
+
+                                    <?php echo $supplier->title; ?>
+
+                                </option>
+
+                                
+
+                            <?php } ?>              
+                </select>
+            </div>
         </div>
-    </div>
 
 
        <div class="control-group">

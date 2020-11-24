@@ -1,3 +1,5 @@
+
+
  <!-- BEGIN HEADER -->
    <div id="header" class="navbar navbar-inverse navbar-fixed-top">
        <!-- BEGIN TOP NAVIGATION BAR -->
@@ -41,14 +43,17 @@
                        <!-- BEGIN USER LOGIN DROPDOWN -->
                        <li class="dropdown">
                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                               <img src="<?php echo base_url("assets");?>/img/kral.png" alt="">
-                               <span class="username">Mustafa Emre İlhan</span>
+                               <img style="width: 30px; height: 30px;" alt="" src="<?php echo base_url("uploads");?>/user/<?php echo  $this->session->oturum_data['img_id'] ?>"  >
+                               <span class="username" style="text-transform: uppercase;"><?php echo  $this->session->oturum_data['user'] ?></span>
                               <!--  <b class="caret"></b> -->
                            </a>
                            <ul class="dropdown-menu extended logout">
-                               <li><a href="#"><i class="icon-user"></i> Profilim</a></li>
+                               <li><a href="<?php echo base_url("login/profilim"); ?>"><i class="icon-user"></i> Profilim</a></li>
+                               <li><a href="<?php echo base_url("basket"); ?>"><i class=" icon-shopping-cart"></i> Sepetim</a></li>
+                               <li><a href="<?php echo base_url("favorite"); ?>"><i class=" icon-heart-empty"></i> Favorilerim</a></li>
+                               <li><a href="<?php echo base_url("receivedorder"); ?>"><i class=" icon-money"></i> Siparişlerim</a></li>
                                <li><a href="#"><i class="icon-cog"></i> Ayarlar</a></li>
-                               <li><a href="<?php echo base_url("login"); ?>"><i class="icon-key"></i> Çıkış </a></li>
+                               <li><a href="<?php echo base_url("login/log_out"); ?>"><i class="icon-key"></i> Çıkış </a></li>
                            </ul>
                        </li>
                        <!-- END USER LOGIN DROPDOWN -->

@@ -3,10 +3,18 @@
 
     class Kategori extends CI_Controller {
 
-        public function __construct() {
-            parent::__construct();
-            $this->load->model("kategori_model");
+        public function __construct()
+    {
+        parent::__construct();
+
+        if (!$this->session->userdata("oturum_data")) {  
+            $this->session->set_flashdata("login_hata","Sayfalara Erişebilmek İçin Giriş Yap"); 
+            redirect(base_url().'login'); 
         }
+         $this->load->model("kategori_model");
+
+    }
+
 
         public function index() {
             $this->load->view('kategori');

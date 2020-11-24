@@ -17,6 +17,8 @@
                 <th><i class=" icon-cogs"></i> Email</th>
                 <th><i class=" icon-phone"></i>Telefon</th>                
                 <th><i class=" icon-cogs"></i> Mesaj</th>
+                <th><i class=" icon-cogs"></i> Statü</th>
+                <th><i class=" icon-cogs"></i> İP</th>
 
                 <!-- <th class="hidden-phone"><i class="icon-question-sign"></i> Descrition</th>
                     <th><i class="icon-bookmark"></i> Profit</th> -->
@@ -61,6 +63,13 @@
 
                      ?>
                 </td>
+
+                 <td>
+                    <button class="btn btn-success" type="button"> <?php echo $contact->status; ?></button>                   
+                </td>
+                 <td>
+                    <?php echo $contact->IP; ?>
+                </td>
                                 
 
             <td>
@@ -69,7 +78,7 @@
                 href="<?php echo base_url("message/editPage/$contact->id") ?>">
                     <i class="icon-pencil"></i>
                 </a>
-                <a class="btn btn-danger removeBtn"
+                <a class="btn btn-danger removeBtn" onclick="return confirm('Silmek istediginizden emin misiniz ?');"
                  dataURL="<?php echo base_url("message/delete/$contact->id") ?>">
                     <i class="icon-trash "></i>
                 </a>
@@ -81,8 +90,6 @@
 
 </tbody>
 </table>
-
-
 
 </div>
 <!-- END PAGE CONTENT-->

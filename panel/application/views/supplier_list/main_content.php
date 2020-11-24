@@ -35,7 +35,7 @@
 
                 <tr>
                     <td>
-                      #<?php echo $row->id; ?>  
+                      #<?php echo $row->supplierid; ?>  
                   </td>
                   <td>
                     <?php echo $row->title; ?>
@@ -72,7 +72,7 @@
                     data-offstyle="danger"
                     type="checkbox"
                     data-toggle="toggle"
-                    dataID="<?php echo $row->id; ?>"
+                    dataID="<?php echo $row->supplierid; ?>"
                     <?php echo ($row->isActive == 1) ? "checked" : ""; ?>
                     >
                 </td>
@@ -80,15 +80,15 @@
             <td>
                
                 <a class="btn btn-primary" 
-                href="<?php echo base_url("supplier/editPage/$row->id") ?>">
+                href="<?php echo base_url("supplier/editPage/$row->supplierid") ?>">
                     <i class="icon-pencil"></i>
                 </a>
                 <a class="btn btn-success" 
-                href="<?php echo base_url("supplier/AuthorizedList/$row->id") ?>">
+                href="<?php echo base_url("supplier/AuthorizedList/$row->supplierid") ?>">
                     <i class="icon-user"></i>
                 </a>
-                <a class="btn btn-danger"
-                 href="<?php echo base_url("supplier/delete/$row->id") ?>">
+                <a class="btn btn-danger" onclick="return confirm('Silmek istediginizden emin misiniz ?');"
+                 href="<?php echo base_url("supplier/delete/$row->supplierid") ?>">
                     <i class="icon-trash "></i>
                 </a>
             </td>

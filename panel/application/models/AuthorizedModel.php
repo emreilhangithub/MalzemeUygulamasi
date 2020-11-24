@@ -14,15 +14,20 @@ class AuthorizedModel extends CI_Model
 
 	}
 	
-	 public function select($where = array(), $select = '*')
+	 public function select($where)
     {
-        $this->db->select()
-            ->from($this->table)
-            ->where($where);        
+        $this->db->select("*");
+        $this->db->from("authorized");
+        $this->db->where($where);
+        $this->db->join('supplier', 'supplierid  = authorized.supplier_id');
+        return $this->db->get()->result(); 
+    }
 
-        $results = $this->db->get()->result();
+     public function tekselect($where=array()){
 
-        return $results;
+        $tekselect = $this->db->where($where)->get($this->table)->row();
+
+        return $tekselect;
     }
 
 
@@ -49,9 +54,11 @@ class AuthorizedModel extends CI_Model
 	public function edit($where)
     {
 
-        $geridon =  $this->db->where($where)->get($this->table)->row();
-
-        return $geridon;        
+        $this->db->select("*");
+        $this->db->from("authorized");
+        $this->db->where($where);
+        $this->db->join('supplier', 'supplierid  = authorized.supplier_id');
+        return $this->db->get()->row();         
     }
 
         public function update($where=array(),$data=array())

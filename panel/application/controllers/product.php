@@ -3,37 +3,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Product extends CI_Controller {
 
-    /* 
-	public function __construct ()
-
+	public function __construct()
 	{
 		parent::__construct();
-		
-		$this->load->library("deneme");
 
-		//die("basladi");
+		if (!$this->session->userdata("oturum_data")) {  
+			$this->session->set_flashdata("login_hata","Sayfalara Erişebilmek İçin Giriş Yap"); 
+			redirect(base_url().'login'); 
+		}
+
 	}
-	*/
+
 
 	public function index()
 	{
 
-// echo "Product";
-// die();
 
 		$viewData = new stdClass();
 
 		$viewData-> rows = 
-		$this->db->order_by('id', 'desc')->get("product")->result(); 
-		//Mor ile yazılan alan bizim sayfa $categories olarak kullanıdıgımız alana denk gelir
-
-		/* product list sayfasında yazdıgımız view datayı yani dbden cektigmiz Ekrana bastık */
+		$this->db->order_by('productid', 'desc')->get("product")->result(); 
 		
-
-		//print_r($viewData->rows);
-		$this->load->view('product_list',$viewData);
-
-		
+		$this->load->view('product_list',$viewData);	
 
 	}
 
@@ -49,7 +40,7 @@ class Product extends CI_Controller {
 
 
 	$update = $this->db
-	->where(array('id' => $id ))
+	->where(array('productid' => $id ))
 	->update("product",array("isActive" => $isActive))	;
 
 }
@@ -61,7 +52,7 @@ class Product extends CI_Controller {
 
 		$viewData = new stdClass();
 
-		$viewData -> categories = $this->db->where("isActive",1)->get("kategoriler")->result();
+		$viewData -> categories = $this->db->where("isActive",1)->get("category")->result();
 
 		$viewData -> suppliers = $this->db->where("isActive",1)->get("supplier")->result();
 
@@ -79,7 +70,7 @@ class Product extends CI_Controller {
 		//$img_id = $_FILES["img_id"] ["name"]; //urlyi almak için kullandık 
 		//nimes php jpg bolumune bak
 		$data = array(
-			'title' =>  $this->input->post('title'), 
+			'titlee' =>  $this->input->post('titlee'), 
 			'code' =>  $this->input->post('code'),
 			'detail' =>  $this->input->post('detail'),
 			'quantity' =>  $this->input->post('quantity'),
@@ -109,7 +100,7 @@ class Product extends CI_Controller {
                 	$this->db->insert("product",$data); 
 
                 }
-
+            $this->session->set_flashdata("eklemebasarili","Ekleme İşlemi Yapıldı"); 
 			redirect(base_url("product"));
 		
 
@@ -123,9 +114,10 @@ class Product extends CI_Controller {
 		//echo $id; burda silecegimiz idyi butona tıklayınca ekrana basmasına yaradı
 
 
-		$delete = $this->db->delete("product",array('id' => $id ));
+		$delete = $this->db->delete("product",array('productid' => $id ));
 
 		if ($delete) {
+			$this->session->set_flashdata("silmebasarili","Silme İşlemi Yapıldı");
 			redirect(base_url("product"));
 		}
 		else{
@@ -139,21 +131,19 @@ class Product extends CI_Controller {
 	public function editPage($id)
 
 	{
-		/* 
-		Ekrana Katogeriniin bilgilerini basıyoruz 
-		$product = $this->db->where("id",$id)->get("product")->row();
-
-		print_r($product);
-
-		*/
-
 		
 		$viewData = new stdClass();
 
-		$viewData-> product = $this->db->where("id",$id)->get("product")->row();
+		 $viewData-> product = $this->db->where("productid",$id)->get("product")->row();
+
+		// $viewData = $this->db->query("
+		// 	SELECT * FROM product 
+		// 	INNER JOIN category ON category.id = product.category_id 
+		// 	INNER JOIN supplier ON supplier.supplierid = product.supplier_id 
+		// 	")->row();
 
 		/* Ekranda tedarikçileri ve kategorileri gosterme  */ 
-		$viewData -> categories = $this->db->where("isActive",1)->get("kategoriler")->result();
+		$viewData -> categories = $this->db->where("isActive",1)->get("category")->result();
 
 		$viewData -> suppliers = $this->db->where("isActive",1)->get("supplier")->result(); 
 		/* bitiş  */  	
@@ -181,14 +171,14 @@ class Product extends CI_Controller {
 		// exit;
 		
 		$code = $this->input->post("code");
-		$title = $this->input->post("title");
+		$titlee = $this->input->post("titlee");
 		$quantity = $this->input->post("quantity");
 		$list_price = $this->input->post("list_price");
 		$sale_price = $this->input->post("sale_price");
 		$total_list =  $this->input->post('list_price') * $this->input->post('kdv') +  $this->input->post('list_price');
 		$total_sale  =  $this->input->post('sale_price') * $this->input->post('kdv') +  $this->input->post('sale_price');
 		$kdv  =  $this->input->post('kdv');
-		$kategori_id = $this->input->post("kategori_id");
+		$category_id = $this->input->post("category_id");
 		$supplier_id = $this->input->post("supplier_id");
 		$isActive = $this->input->post("isActive");
 		$img_id = $_FILES["img_id"] ["name"];
@@ -198,14 +188,14 @@ class Product extends CI_Controller {
 
 		$data = array(
 			'code' => $code,
-			'title' => $title,
+			'titlee' => $titlee,
 			'quantity' => $quantity,
 			'list_price' => $list_price,
 			'sale_price' => $sale_price,
 			'total_list' => $total_list,
 			'total_sale' => $total_sale,
 			'kdv' => $kdv,
-			'kategori_id' => $kategori_id,
+			'category_id' => $category_id,
 			'supplier_id' => $supplier_id,
 			'isActive' => $isActive,
 			'img_id' => $img_id
@@ -213,7 +203,7 @@ class Product extends CI_Controller {
 
 	) ;
 
-		$update = $this->db->where('id' , $id ) ->update("product",$data);
+		$update = $this->db->where('productid' , $id ) ->update("product",$data);
 
 			if ($update) {
 
@@ -231,7 +221,7 @@ class Product extends CI_Controller {
                 	Lüften jpg- png kayıt yapınız </span>";
                 	die();
                 }
-
+            $this->session->set_flashdata("duzenlemebasarili","Duzenleme İşlemi Yapıldı");
 			redirect(base_url("product"));
 		}
 		else{
@@ -239,6 +229,29 @@ class Product extends CI_Controller {
 		}
 
 }	
+
+
+public function detailPage($id)
+
+	{
+			$viewData = new stdClass();
+
+		$viewData-> product = $this->db->where("productid",$id)->get("product")->row();
+
+		/* Ekranda tedarikçileri ve kategorileri gosterme  */ 
+		$viewData -> categories = $this->db->get("category")->result();
+
+		$viewData -> suppliers = $this->db->get("supplier")->result(); 
+		/* bitiş  */  	
+		
+
+		$viewData->aktif="test";
+
+		$this->load->view('product_detail',$viewData); //burda categori butonuna basınca ekrana cıkar
+
+
+
+	}
 
 
 

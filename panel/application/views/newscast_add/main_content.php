@@ -18,9 +18,9 @@
 
              <?php foreach ($products as $product) { ?>
 
-                <option value="<?php echo $product->id; ?>"> 
+                <option value="<?php echo $product->productid; ?>"> 
 
-                    <?php echo $product->title; ?>
+                    <?php echo $product->titlee; ?>
 
                 </option>
 

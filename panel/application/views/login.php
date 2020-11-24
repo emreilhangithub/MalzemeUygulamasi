@@ -24,7 +24,7 @@
             </div>
         </div>
 
-        <form action="<?php echo base_url("login"); ?>" method="post">
+        <form action="<?php echo base_url("login/login_ol"); ?>" method="post">
         <div class="metro double-size green">            
                 <div class="input-append lock-input">
                     <input type="email" name="email" placeholder="E mail Giriniz">
@@ -45,6 +45,47 @@
                 </button>            
         </div>
         </form>
+
+
+        <br><br><br><br><br><br><br><br>
+           <?php if ($this->session->flashdata('login_hata')) {?>
+
+             <div class="widget-body">
+                            <div class="alert alert-error">
+                                <button data-dismiss="alert" class="close">×</button>
+                                <strong>Hata!</strong> <?php echo $this->session->flashdata('login_hata'); ?>
+                            </div>
+                        </div>
+              
+            <?php  } ?>
+
+            <!-- <?php if ($this->session->flashdata('exitokey')) {?>
+
+             <div class="widget-body">
+                            <div class="alert alert-success">
+                                <button data-dismiss="alert" class="close">×</button>
+                                <strong>Başarılı!</strong> <?php echo $this->session->flashdata('exitokey'); ?>
+                            </div>
+                        </div>
+              
+            <?php  } ?> -->
+                
+           
+
+                        
+                           <!--  <div class="alert">
+                                <button data-dismiss="alert" class="close">×</button>
+                                <strong>Warning!</strong> Best check yo self, you're not looking too good.
+                            </div>
+                            <div class="alert alert-success">
+                                <button data-dismiss="alert" class="close">×</button>
+                                <strong>Success!</strong> You successfully read this important message.
+                            </div>
+                            <div class="alert alert-info">
+                                <button data-dismiss="alert" class="close">×</button>
+                                <strong>Info!</strong> Heads up! This alert needs your attention.
+                            </div> -->
+                            
        
         
         <!-- <div class="login-footer">

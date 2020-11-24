@@ -5,7 +5,7 @@
 <div class="row-fluid">
 
     <!-- BEGIN FORM-->
-    <form action="<?php echo base_url("product/update/$product->id"); ?>"
+    <form action="<?php echo base_url("product/update/$product->productid"); ?>"
        class="form-horizontal" method="post" enctype="multipart/form-data">
 
 
@@ -22,8 +22,8 @@
        <div class="control-group">
         <label class="control-label">Ürün Adı(*)</label>
         <div class="controls">
-            <input type="text" class="span6 " name="title" required="" minlength="5"
-            value="<?php echo $product->title; ?>" 
+            <input type="text" class="span6 " name="titlee" required="" minlength="5"
+            value="<?php echo $product->titlee; ?>" 
             />
         </div>
     </div>
@@ -87,6 +87,9 @@
 
             <select type="text" class="span6" name="category_id">
 
+                <option value="<?php echo $product->category_id; ?>">  <?php echo $product->category_id; ?> </option>
+
+
              <?php foreach ($categories as $category) { ?>
 
                 <option value="<?php echo $category->id; ?>"> 
@@ -107,9 +110,11 @@
 
         <select type="text" class="span6" name="supplier_id">
 
+            <option value="<?php echo $product->category_id; ?>">  <?php echo $product->supplier_id; ?> </option>
+
          <?php foreach ($suppliers as $supplier) { ?>
 
-            <option value="<?php echo $supplier->id; ?>"> 
+            <option value="<?php echo $supplier->supplierid; ?>"> 
 
                 <?php echo $supplier->title; ?>
 
@@ -125,9 +130,21 @@
 <div class="control-group">
     <label class="control-label">Resim(*)</label>
     <div class="controls">
+         <img src="<?php echo base_url("uploads");?>/product/<?php echo $product->img_id; ?>" 
+         alt="<?php echo $product->titlee; ?>">    <br>
         <input type="file" name="img_id" required=""> 
 </div>
 </div>
+                        
+                                        
+    
+
+                     
+                
+                        
+                                        
+                  </td>
+
 
 
 

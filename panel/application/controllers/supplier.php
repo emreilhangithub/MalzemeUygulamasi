@@ -1,14 +1,15 @@
 <?php 
 
-class Supplier extends CI_Controller { 
-
+class Supplier extends CI_Controller { 	
 
 	public function __construct()
-
 	{
-
 		parent::__construct();
 
+		if (!$this->session->userdata("oturum_data")) {  
+			$this->session->set_flashdata("login_hata","Sayfalara Erişebilmek İçin Giriş Yap"); 
+			redirect(base_url().'login'); 
+		}
 		$this->load->model("AuthorizedModel");
 
 	}
@@ -17,26 +18,13 @@ class Supplier extends CI_Controller {
 	public function index()
 	{
 
-//1 ) echo "index"; burda ilk yazıyı gorduk 
-
-		// 2) $viewData = new stdClass();
-
-		// $rows = $this->db->get("supplier")->result(); 
-
-		// print_r($rows);
-
 		$viewData = new stdClass();
 
-		$viewData->rows = $this->db->get("supplier")->result();
+		$viewData->rows = $this->db->order_by('supplierid', 'desc')->get("supplier")->result();
 
 
 		$this->load->view('supplier_list',$viewData);
-
-
-
-
 	}
-
 
 	public function editPage($id)
 
@@ -51,7 +39,7 @@ class Supplier extends CI_Controller {
 
 		$viewData = new stdClass();
 
-		$viewData-> supplier = $this->db->where("id",$id)->get("supplier")->row(); 
+		$viewData-> supplier = $this->db->where("supplierid",$id)->get("supplier")->row(); 
 
 		$viewData->aktif="test";
 
@@ -74,7 +62,7 @@ class Supplier extends CI_Controller {
 
 
 	$update = $this->db
-	->where(array('id' => $id ))
+	->where(array('supplierid' => $id ))
 	->update("supplier",array("isActive" => $isActive))	;
 
 }
@@ -100,6 +88,7 @@ class Supplier extends CI_Controller {
 		$insert = $this->db->insert("supplier",$data);
 
 		if ($insert) {
+			 $this->session->set_flashdata("eklemebasarili","Ekleme İşlemi Yapıldı");  
 			redirect(base_url("supplier"));
 		}
 		else{
@@ -138,9 +127,10 @@ class Supplier extends CI_Controller {
 
 	) ;
 
-		$update = $this->db->where('id' , $id ) ->update("supplier",$data);
+		$update = $this->db->where('supplierid' , $id ) ->update("supplier",$data);
 
 			if ($update) {
+				$this->session->set_flashdata("duzenlemebasarili","Duzenleme İşlemi Yapıldı");   
 			redirect(base_url("supplier"));
 		}
 		else{
@@ -160,9 +150,10 @@ class Supplier extends CI_Controller {
 		//echo $id; burda silecegimiz idyi butona tıklayınca ekrana basmasına yaradı
 
 
-		$delete = $this->db->delete("supplier",array('id' => $id ));
+		$delete = $this->db->delete("supplier",array('supplierid' => $id ));
 
 		if ($delete) {
+			$this->session->set_flashdata("silmebasarili","Silme İşlemi Yapıldı");
 			redirect(base_url("supplier"));
 			//echo true;
 		}
@@ -197,11 +188,18 @@ class Supplier extends CI_Controller {
 
 	{	
 
-   $this->AuthorizedModel->delete(
+	$tek = $this->AuthorizedModel->tekselect(array("id" => $id));	 //tek sorgu silmesi  ve suplier id ye geir doonsun  için bunu yazdık
+
+   $delete =  $this->AuthorizedModel->delete(
 	    array(
 	    	'id'  => $id
 	    ));
 
+   if ($delete) {
+   	$this->session->set_flashdata("silmebasarili","Silme İşlemi Yapıldı");
+   redirect("supplier/AuthorizedList/$tek->supplier_id");//burda tek içersindekini cagırdık yani viewde gosterıyormus gibi dusun 
+   }
+   
 
 	}
 
@@ -240,7 +238,8 @@ class Supplier extends CI_Controller {
 		echo $insert;
 
 		if ($insert) {
-			redirect(base_url("supplier"));
+			$this->session->set_flashdata("eklemebasarili","Ekleme İşlemi Yapıldı");
+			redirect(base_url("supplier/AuthorizedList/$supplier_id"));
 		}
 		else 
 			{echo "başarısız işlem";}
@@ -259,8 +258,11 @@ class Supplier extends CI_Controller {
 		);
 
 		$listele = $this->AuthorizedModel->edit($where);
+		$suppliers = $this->db->get("supplier")->result();
 
-		$viewData = array('listele' => $listele);		
+		$viewData = array('listele' => $listele,
+			'suppliers' => $suppliers
+		);		
 
 		$this->load->view("authorized_edit",$viewData);
 
@@ -294,7 +296,8 @@ class Supplier extends CI_Controller {
 	
 
 		if ($update) {
-			redirect(base_url("supplier"));
+			$this->session->set_flashdata("duzenlemebasarili","Duzenleme İşlemi Yapıldı"); 
+			redirect(base_url("supplier/AuthorizedList/$supplier_id"));
 		}
 		else 
 			{echo "başarısız işlem";}

@@ -18,10 +18,17 @@
                       </a>
                   </li>
 
+                  <li class="sub-menu">
+                      <a class="" href="<?php echo base_url("user") ?>">
+                          <i class="icon-male"></i>
+                          <span>Kullanıcılar</span>
+                      </a>
+                  </li>
+
                   
 
                   <li class="sub-menu">
-                      <a class="" href="<?php echo base_url("kategori") ?>">
+                      <a class="" href="<?php echo base_url("category") ?>">
                           <i class="icon-sitemap"></i>
                           <span>Kategori</span>
                       </a>

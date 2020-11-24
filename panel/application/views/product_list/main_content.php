@@ -24,8 +24,8 @@
                  <th><i class="icon-money"></i>Alış Fiyatı</th>
                  <th><i class="icon-money"></i>Satış Fiyatı</th>
 
-                <th><i class=" icon-edit"></i>Durum</th>
-                <th><i class=" icon-cogs"></i> İşlemler</th>
+               <?php if ($this->session->oturum_data['authority'] == "admin") {?>  <th><i class=" icon-edit"></i>Durum</th>   <?php  } ?>
+                 <th><i class=" icon-cogs"></i> İşlemler</th>
 
                 <!-- <th class="hidden-phone"><i class="icon-question-sign"></i> Descrition</th>
                     <th><i class="icon-bookmark"></i> Profit</th> -->
@@ -41,7 +41,7 @@
 
                 <tr>
                     <td>
-                      <?php echo $row->id; ?>  
+                      <?php echo $row->productid; ?>  
                   </td>
 
 
@@ -54,7 +54,7 @@
                         
                         <img src="<?php echo base_url("uploads/product/$row->img_id"); ?>" 
 
-                         alt="<?php echo $row->title; ?>">                     
+                         alt="<?php echo $row->titlee; ?>">                     
 
                    <?php } else { ?> 
 
@@ -69,7 +69,7 @@
                     <?php echo $row->code; ?>
                 </td>
                 <td>
-                    <?php echo $row->title; ?>
+                    <?php echo $row->titlee; ?>
                 </td>
                 <td>
                     <?php echo get_category_title($row->category_id); ?>
@@ -88,6 +88,7 @@
                 </td>
                 
                 <td>
+                    <?php if ($this->session->oturum_data['authority'] == "admin") {?>
                     <input class = "toggle_check"
                     data-onstyle="success"
                     data-size = "mini"
@@ -96,21 +97,38 @@
                     data-offstyle="danger"
                     type="checkbox"
                     data-toggle="toggle"
-                    dataID="<?php echo $row->id; ?>"
+                    dataID="<?php echo $row->productid; ?>"
                     <?php echo ($row->isActive == 1) ? "checked" : ""; ?>
                     >
+                      <?php  } ?>
                 </td>
             <!-- checked demek secili demek checked dedigimiz için otamatik secili gelmişti-->
             <td>
-               
-                <a class="btn btn-primary" 
-                href="<?php echo base_url("product/editPage/$row->id") ?>">
+
+                
+
+              <a class="btn btn-success"
+                 href="<?php echo base_url("product/detailPage/$row->productid") ?>">
+                    <i class="icon-eye-open"></i>
+                </a>
+             
+
+             <?php if ($this->session->oturum_data['authority'] == "admin") {?>
+
+             <a class="btn btn-primary" 
+                href="<?php echo base_url("product/editPage/$row->productid") ?>">
                     <i class="icon-pencil"></i>
                 </a>
-                <a class="btn btn-danger"
-                 href="<?php echo base_url("product/delete/$row->id") ?>">
+                <a class="btn btn-danger" onclick="return confirm('Silmek istediginizden emin misiniz ?');"
+                 href="<?php echo base_url("product/delete/$row->productid") ?>">
                     <i class="icon-trash "></i>
                 </a>
+             
+              
+            <?php  } ?>
+
+               
+                
             </td>
         </tr>
 
@@ -123,4 +141,6 @@
 
 
 </div>
+
+
 <!-- END PAGE CONTENT-->

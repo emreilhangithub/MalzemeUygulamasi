@@ -3,12 +3,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Newscast extends CI_Controller {
 
+	public function __construct()
+	{
+		parent::__construct();
+
+		if (!$this->session->userdata("oturum_data")) {  
+			$this->session->set_flashdata("login_hata","Sayfalara Erişebilmek İçin Giriş Yap"); 
+			redirect(base_url().'login'); 
+		}
+		$this->load->model("NewscastModel");
+
+	}
+
 
 
 	public function index()
-	{
-
-		$this->load->model("NewscastModel");
+	{		
 		$this->load->library("pagination");
 
 		//echo $this->NewscastModel->get_count(); //ekrana toplamı basar
@@ -66,7 +76,7 @@ class Newscast extends CI_Controller {
 
 
 	$update = $this->db
-	->where(array('id' => $id ))
+	->where(array('newcastid' => $id ))
 	->update("newscast",array("isActive" => $isActive))	;
 
 }
@@ -124,7 +134,7 @@ class Newscast extends CI_Controller {
                 	Lüften jpg- png kayıt yapınız </span>";
                 	die();
                 } 
-
+            $this->session->set_flashdata("eklemebasarili","Ekleme İşlemi Yapıldı");   
 			redirect(base_url("newscast"));
 		}
 
@@ -143,9 +153,10 @@ public function delete($id)
 		//echo $id; burda silecegimiz idyi butona tıklayınca ekrana basmasına yaradı
 
 
-		$delete = $this->db->delete("newscast",array('id' => $id ));
+		$delete = $this->db->delete("newscast",array('newcastid' => $id ));
 
 		if ($delete) {
+			$this->session->set_flashdata("silmebasarili","Silme İşlemi Yapıldı");  
 			redirect(base_url("newscast"));
 			//echo true;
 		}
@@ -154,14 +165,20 @@ public function delete($id)
 		public function editPage($id)
 
 	{
-		
-		$viewData = new stdClass();
+		$where = array(
+			'newcastid' => $id					
+		);
 
-		$viewData-> newscast = $this->db->where("id",$id)->get("newscast")->row();
+		 $newscast = $this->NewscastModel->edit($where);
 
-		$viewData -> products = $this->db->where("isActive",1)->get("product")->result();		
+		//$newscast = $this->db->where($where)->get("newscast")->row();
 
-		$viewData->aktif="test";
+		$products = $this->db->where("isActive",1)->get("product")->result();		
+
+		$viewData = array(
+			'newscast' => $newscast,
+			 'products' => $products	
+			);	
 
 
 		$this->load->view('newscast_edit',$viewData); //burda categori butonuna basınca ekrana cıkar
@@ -196,7 +213,9 @@ public function delete($id)
 
 	) ;
 
-		$update = $this->db->where('id' , $id ) ->update("newscast",$data);
+
+
+		$update = $this->db->where('newcastid' , $id ) ->update("newscast",$data);
 
 			if ($update) {
 
@@ -213,7 +232,7 @@ public function delete($id)
                 	Lüften jpg- png kayıt yapınız </span>";
                 	die();
                 }
-
+            $this->session->set_flashdata("duzenlemebasarili","Duzenleme İşlemi Yapıldı");     
 			redirect(base_url("newscast"));
 		}
 		else{

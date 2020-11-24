@@ -5,61 +5,70 @@ class Login extends CI_Controller {
 
 		public function __construct()
 	{
-		parent::__construct();
+		parent::__construct();		
 
-		$this->load->model("book_model");
-
+		$this->load->model("Admin_Model");
 	}
 
 	public function index()
 	{
 
-		$this->load->library("form_validation");
+	 if ($this->session->userdata("oturum_data")) {  
+			redirect(base_url().'home'); //zaten login isen buraya göndersin beni
+		}	
 
-		$this->form_validation->set_rules('email','Eposta','required|trim|valid_email');
-		$this->form_validation->set_rules('password','Sifre','required|trim|min_length[6]');
+	$this->load->view('login');
 
-
-		$error_message = array(
-			'required' => '<div style=color:red;>
-			<strong> {field} </strong> Başarısız Bu Alanı Doldurmak Zorundasınız!. </div>', 
-			'valid_email' => '<div>
-			<strong> {field} </strong> Doğru şekilde giriniz. </div>', 
-			'min_length' => '<div>
-			<strong> {field} </strong> Şifre en az 6 karakter olmak zorunda  </div>'
-		); 
-
-		$this->form_validation->set_message($error_message);
-
-		if ($this->form_validation->run()) {
-
-		$email = $this->input->post('email');
-		$password = $this->input->post('password');
-
-		$sonuc = $this->book_model->uyevarmi($email,$password);
-
-		if ($sonuc) {
-			$this->session->userdata('durum',true);
-			$this->session->userdata('user',$sonuc);
-			$this->session->set_flashdata('grit','<div> <strong>Tebrikler! </strong>
-				Başarıyla Giriş Yaptınız </div>');
-			redirect(base_url("home"));
-
-		}
-		}
-
-		else {
-
-			echo validation_errors();
-
-
-		}
-
-
-		$this->load->view('login');
-
-	
 	}
 
+	public function login_ol()
+	{
+
+	$email = $this->input->post('email',TRUE);
+	$password = $this->input->post('password',TRUE);
+
+	$email = $this->security->xss_clean($email);//guvenlik sagladık
+	$password = $this->security->xss_clean($password);
+
+	$result = $this->Admin_Model->login($email,$password);
+
+	if ($result) {
+		$oturum_dizi = array(
+			'userid' => $result[0]->id, 
+			'user' => $result[0]->user,
+			'email' => $result[0]->email, 
+			'password' => $result[0]->password, 
+			'img_id' => $result[0]->img_id, 
+			'isActive' => $result[0]->isActive, 
+			'registerdate' => $result[0]->registerdate, 
+			'authority' => $result[0]->authority, 
+
+			 
+		);
+		$this->session->set_userdata("oturum_data",$oturum_dizi);
+		 //echo $result[0]->id ;
+		 //echo $this->session->oturum_data['user'] ;
+		$this->session->set_flashdata("giris","Giriş Yapıldı Hoşgeldiniz");
+		 redirect(base_url("home"));
+		}
+		else
+		{
+			$this->session->set_flashdata("login_hata","Geçersiz e mail yada şifre");
+			$this->load->view('login');
+
+		}
+
+	 }
+
+	 public function log_out()
+	{
+		//$this->session->set_flashdata("exitokey","Başarıyla Çıkış Yapıldı");
+		$this->session->unset_userdata('oturum_data');
+		$this->session->sess_destroy();		
+		redirect(base_url().'login');	
+
+	}
 
 }
+
+		

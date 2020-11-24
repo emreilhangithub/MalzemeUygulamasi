@@ -9,44 +9,56 @@
        class="form-horizontal" method="post">
 
 
-       <div class="control-group">
-        <label class="control-label">İsim(*)</label>
-        <div class="controls">
-            <input type="text" class="span6 " name="name" required="" maxlength="20" minlength="5"
-            value="<?php echo $contact->name; ?>" 
-            />
-        </div>
-    </div>
+       <table border="1">
+        <tbody>
+                
+            <tr>
+                <td>Ad = </td><td><?php echo $contact->name; ?></td>
+            </tr>
+            <tr>
+                <td>Tarih = </td><td><?php echo $contact->date; ?></td>
+            </tr>
+            <tr>
+                <td>Telefon = </td><td><?php echo $contact->phone; ?></td>
+            </tr>
+            <tr>
+                <td>Mail = </td><td><?php echo $contact->email; ?></td>
+            </tr>
+            <tr>
+                <td>Kullanıcı Adı = </td><td><?php echo $contact->user; ?></td>
+            </tr>
+            <tr>
+                <td>İp Adresi = </td><td><?php echo $contact->IP; ?></td>
+            </tr>
+            <tr>
+                <td>Mesaj = </td><td><?php echo $contact->message; ?></td>
+            </tr>
+            <tr>
+                <td>Admin Mesaj = </td><td><?php echo $contact->adminmessage; ?></td>
+            </tr>
+        </tbody>          
 
+
+       </table>
+
+       <br>
 
     <div class="control-group">
-        <label class="control-label">Email(*)</label>
-        <div class="controls">
-            <input type="email" class="span6 " name="email" required="" 
-            value="<?php echo $contact->email; ?>" 
-            />
-        </div>
-    </div>
-    
-
-    <div class="control-group">
-        <label class="control-label">Telefon(*)</label>
-        <div class="controls">
-            <input type="text" class="span6 " name="phone" required="" maxlength="11" minlength="11" pattern="\d{11}"
-            value="<?php echo $contact->phone; ?>" 
-            />
-        </div>
+     <label class="control-label">Statü Seçiniz (*) </label>   
+        <select name="status">
+            <option value="<?php echo $contact->status; ?>"><?php echo $contact->status; ?></option>
+            <option value="yeni">Yeni</option>
+            <!-- <option value="okundu">Okundu</option> -->
+            <option value="islemde">İşlemde</option>
+            <option value="tamamlandi">Tamamlandi</option>
+        </select>
     </div>
 
-    
-
     <div class="control-group">
-        <label class="control-label">Mesaj(*)</label>
-        <div class="controls">
-            <input class="span6 " name="message" required="" maxlength="200" minlength="5"
-            cols="30" rows="10" value="<?php echo $contact->message; ?>" 
-            > 
-        </div>
+         <label class="control-label">Admin Mesajı(*) </label>
+    <textarea name="adminmessage">
+        <?php echo $contact->adminmessage; ?>       
+    </textarea>
     </div>
 
 

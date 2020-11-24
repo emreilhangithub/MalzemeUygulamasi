@@ -4,7 +4,23 @@
     <!-- BEGIN PAGE TITLE & BREADCRUMB-->
     <h3 class="page-title">
      Yetkililer
+     <?php if ($this->session->flashdata('eklemebasarili') || $this->session->flashdata('silmebasarili') || $this->session->flashdata('duzenlemebasarili')
+
+                  ) {?>
+
+             <div class="widget-body">
+                            <div class="alert  alert-success">
+                                <button data-dismiss="alert" class="close">×</button>
+                                 <strong>Başarılı!</strong> 
+                                  <?php echo $this->session->flashdata('eklemebasarili'); ?> 
+                                  <?php echo $this->session->flashdata('silmebasarili'); ?>
+                                  <?php echo $this->session->flashdata('duzenlemebasarili'); ?> 
+                            </div>
+                        </div>
+              
+            <?php  } ?>
    </h3>
+
   <!--  <ul class="breadcrumb">
      <li>
        <a href="#">Home</a>

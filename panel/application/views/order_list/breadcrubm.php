@@ -5,6 +5,21 @@
     <h3 class="page-title">
      Satış Faturaları Listesi
    </h3>
+   <?php if ($this->session->flashdata('eklemebasarili') || $this->session->flashdata('silmebasarili') || $this->session->flashdata('duzenlemebasarili')
+
+                  ) {?>
+
+             <div class="widget-body">
+                            <div class="alert  alert-success">
+                                <button data-dismiss="alert" class="close">×</button>
+                                 <strong>Başarılı!</strong> 
+                                  <?php echo $this->session->flashdata('eklemebasarili'); ?> 
+                                  <?php echo $this->session->flashdata('silmebasarili'); ?>
+                                  <?php echo $this->session->flashdata('duzenlemebasarili'); ?> 
+                            </div>
+                        </div>
+              
+            <?php  } ?>
  <!--   <ul class="breadcrumb">
      <li>
        <a href="#">Home</a>

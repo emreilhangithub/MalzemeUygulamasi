@@ -15,4 +15,19 @@ class category extends CI_Controller {
 		$data['orders']=$orders;
 		$this->load->view('category_list',$data);
 	 }
+
+		public function newPage()
+
+	{
+
+		$viewData = new stdClass();
+
+		$viewData -> category = $this->db->where("isActive",1)->get("product")->result();
+
+
+		$this->load->view('category_add',$viewData);
+
+	}	
+
+
 }

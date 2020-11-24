@@ -5,6 +5,17 @@
     <h3 class="page-title">
      Mesaj Sayfası
    </h3>
+   <?php if ($this->session->flashdata('mesajbasarili') ) {?>
+
+             <div class="widget-body">
+                            <div class="alert  alert-success">
+                                <button data-dismiss="alert" class="close">×</button>
+                                 <strong>Başarılı!</strong> 
+                                  <?php echo $this->session->flashdata('mesajbasarili'); ?>                                
+                            </div>
+                        </div>
+              
+            <?php  } ?>
    <!-- <ul class="breadcrumb">
      <li>
        <a href="#">Home</a>

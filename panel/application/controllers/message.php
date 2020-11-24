@@ -3,13 +3,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Message extends CI_Controller {
 
+	public function __construct()
+	{
+		parent::__construct();
+
+		if (!$this->session->userdata("oturum_data")) {  
+			$this->session->set_flashdata("login_hata","Sayfalara Erişebilmek İçin Giriş Yap"); 
+			redirect(base_url().'login'); 
+		}
+
+	}
+
    	public function index()
 	{
 
 		$viewData = new stdClass();
 
 		$viewData-> contacts = 
-		$this->db->get("contact")->result(); 
+		$this->db->order_by("id", "desc")->get("contact")->result(); 
 		$this->load->view('message_list',$viewData);
 
 	
@@ -24,6 +35,7 @@ public function delete($id)
 		$delete = $this->db->delete("contact",array('id' => $id ));
 
 		if ($delete) {
+			$this->session->set_flashdata("silmebasarili","Silme İşlemi Yapıldı");
 			redirect(base_url("message"));
 			//echo true;
 		}
@@ -39,6 +51,7 @@ public function editPage($id)
 
 	{
 	
+		$this->db->query("UPDATE contact SET status='okundu' WHERE id=$id");//duzenle butonuna basınca okundu yapar
 
 		$viewData = new stdClass();
 
@@ -59,17 +72,13 @@ public function editPage($id)
 public function update($id)
 
 	{
-		$name = $this->input->post("name");
-		$email = $this->input->post("email");
-		$phone = $this->input->post("phone");
-		$message = $this->input->post("message");		
+		$status = $this->input->post("status");
+		$adminmessage = $this->input->post("adminmessage");		
 		
 
 		$data = array(
-			'name' => $name,
-			'email' => $email,
-			'phone' => $phone,
-			'message' => $message
+			'status' => $status,
+			'adminmessage' => $adminmessage
 
 
 		) ;
@@ -77,6 +86,7 @@ public function update($id)
 		$update = $this->db->where('id' , $id ) ->update("contact",$data);
 
 		if ($update) {
+			$this->session->set_flashdata("duzenlemebasarili","Duzenleme İşlemi Yapıldı"); 
 			redirect(base_url("message"));
 		}
 		else{

@@ -18,7 +18,7 @@
 
                              <?php foreach ($suppliers as $supplier) { ?>
 
-                                <option value="<?php echo $supplier->id; ?>"> 
+                                <option value="<?php echo $supplier->supplierid; ?>"> 
 
                                     <?php echo $supplier->title; ?>
 

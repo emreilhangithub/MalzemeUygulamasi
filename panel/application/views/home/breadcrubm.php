@@ -5,6 +5,19 @@
                    <h3 class="page-title">
                      Anasayfa
                    </h3>
+
+                    <?php if ($this->session->flashdata('giris')) {?>
+
+             <div class="widget-body">
+                            <div class="alert  alert-success">
+                                <button data-dismiss="alert" class="close">×</button>
+                                <strong>Başarılı!</strong> <?php echo $this->session->flashdata('giris'); 
+                                echo "&nbsp;"; 
+                                 echo $this->session->oturum_data['user'] ; ?>
+                            </div>
+                        </div>
+              
+            <?php  } ?>
                   <!--  <ul class="breadcrumb">
                        <li>
                            <a href="#">Anasayfa</a>

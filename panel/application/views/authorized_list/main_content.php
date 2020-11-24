@@ -13,6 +13,7 @@
         <thead>
             <tr>
                 <th><i class="icon-sort-by-order"></i>Kno</th>
+                <th><i class="icon-sort-by-order"></i>Firma</th>
                 <th><i class="icon-building"></i>İsim</th>
                 <th><i class="icon-phone"></i>Telefon</th>
                 <th><i class="icon-envelope"></i>Eposta</th>
@@ -36,7 +37,9 @@
                     <td>
                       #<?php echo $row->id; ?>  
                   </td>
-                             
+                   <td>
+                      <?php echo $row->title; ?>  
+                  </td>                             
                 <td>
                     <?php echo $row->name; ?>
                 </td>
@@ -45,19 +48,9 @@
                 </td>
                  <td>
                     <?php echo $row->mail; ?>
-                </td>
+                </td>                
                  <td>
-                    <input class = "toggle_check"
-                    data-onstyle="success"
-                    data-size = "mini"
-                    data-on="Aktif"
-                    data-off="Pasif"
-                    data-offstyle="danger"
-                    type="checkbox"
-                    data-toggle="toggle"
-                    dataID="<?php echo $row->id; ?>"
-                    <?php echo ($row->isActive == 1) ? "checked" : ""; ?>
-                    >
+                    <button  type="button"> <?php echo($row->isActive == 1) ? "<span>Aktif<span>" : "Pasif"; ?></button>                   
                 </td>
             <!-- checked demek secili demek checked dedigimiz için otamatik secili gelmişti-->
             <td>
@@ -67,7 +60,7 @@
                     <i class="icon-pencil"></i>
                 </a>
               
-                <a class="btn btn-danger"
+                <a class="btn btn-danger" onclick="return confirm('Silmek istediginizden emin misiniz ?');"
                  href="<?php echo base_url("supplier/AuthorizedDelete/$row->id") ?>">
                     <i class="icon-trash "></i>
                 </a>

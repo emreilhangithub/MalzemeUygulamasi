@@ -4,7 +4,7 @@ function get_product_title($id)
 {
 	$CI = &get_instance(); 
 	$row = $CI->db
-	->where("id", $id)
+	->where("productid", $id)
 	->get("product")
 	->row();
 	
@@ -12,7 +12,7 @@ function get_product_title($id)
 	$title = "<span style='color:red'> Ürün Bulanamadı !!! </span>";
 
 	if (!empty($row)) {
-		$title=$row->title;
+		$title=$row->titlee;
 	}
 
 		return $title;
@@ -23,15 +23,15 @@ function get_category_title($id)
 {
 	$CI = &get_instance(); 
 	$row = $CI->db
-	->where("kategori_id", $id)
-	->get("kategoriler")
+	->where("id", $id)
+	->get("category")
 	->row();
 	
 
 	$title = "<span style='color:red'> Kategori Bulanamadı !!! </span>";
 
 	if (!empty($row)) {
-		$title=$row->kategori_adi;
+		$title=$row->title;
 	}
 
 		return $title;
@@ -49,7 +49,7 @@ function get_supplier_title($id)
 
 	$CI = &get_instance(); 
 	$row = $CI->db
-	->where("id", $id)
+	->where("supplierid", $id)
 	->get("supplier")
 	->row();
 	

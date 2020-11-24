@@ -13,7 +13,7 @@
        <div class="control-group">
         <label class="control-label">Ürün Adı(*)</label>
         <div class="controls">
-            <input type="text" class="span6 " name="title" required="" minlength="5" />
+            <input type="text" class="span6 " name="titlee" required="" minlength="5" />
         </div>
     </div>
 
@@ -83,9 +83,9 @@
 
              <?php foreach ($categories as $category) { ?>
 
-                <option value="<?php echo $category->kategori_id; ?>"> 
+                <option value="<?php echo $category->id; ?>"> 
 
-                    <?php echo $category->kategori_adi; ?>
+                    <?php echo $category->title; ?>
 
                 </option>
 
@@ -105,9 +105,11 @@
 
         <select type="text" class="span6" name="supplier_id">
 
+            
+
          <?php foreach ($suppliers as $supplier) { ?>
 
-            <option value="<?php echo $supplier->id; ?>"> 
+            <option value="<?php echo $supplier->supplierid; ?>"> 
 
                 <?php echo $supplier->title; ?>
 
@@ -127,11 +129,6 @@
         <input type="file" name="img_id" required="">
 </div>
 </div>
-
-
-
-
-
 
 
 

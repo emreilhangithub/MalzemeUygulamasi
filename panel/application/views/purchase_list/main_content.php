@@ -15,17 +15,8 @@
                 <th><i class="icon-sort-by-order"></i>Kno</th>
                 <th width="100"><i class="icon-image"></i>Fatura No</th>
                 <th><i class="icon-bullhorn"></i>Açıklama</th>
-
                 <th><i class="icon-shield"></i>Ürün Adı</th>
-
-
                 <th><i class="icon-bullhorn"></i>Tedarikçi</th>
-
-                 <th><i class="icon-info"></i>Miktar</th>
-                 <th><i class="icon-money"></i>Alış Fiyatı</th>
-                 <th><i class="icon-money"></i>Fatura Tutarı</th>
-                 <th><i class="icon-money"></i>Tarih</th>
-                
                 <th><i class=" icon-cogs"></i> İşlemler</th>
 
                 <!-- <th class="hidden-phone"><i class="icon-question-sign"></i> Descrition</th>
@@ -62,19 +53,7 @@
                      ?>
                 </td>
                 <td>
-                    <?php echo get_product_title($row->product_id); ?>
-                </td>
-                <td>
                     <?php echo get_supplier_title($row->supplier_id); ?>
-                </td>
-                <td>
-                    <?php echo $row->quantity; ?>
-                </td>
-                <td>
-                    <?php echo $row->price; ?>
-                </td>                
-                <td>
-                    <?php echo $row->total_price; ?>
                 </td>
                 <td>
                     <?php echo $row->date; ?>
@@ -82,15 +61,18 @@
                 
                
             <td>
-               
-                <a class="btn btn-primary" 
+                <a class="btn btn-success" href="<?php echo base_url("purchase/detail/$row->id") ?>">
+                    <i class="icon-eye-open"></i>
+                </a>
+                <!-- <a class="btn btn-primary" 
                 href="<?php echo base_url("purchase/editPage/$row->id") ?>">
                     <i class="icon-pencil"></i>
-                </a>
+                </a> -->
                 <a class="btn btn-danger"
                  href="<?php echo base_url("purchase/delete/$row->id") ?>">
                     <i class="icon-trash "></i>
                 </a>
+               
             </td>
         </tr>
 

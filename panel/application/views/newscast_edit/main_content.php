@@ -5,7 +5,7 @@
 <div class="row-fluid">
 
     <!-- BEGIN FORM --> 
-    <form action="<?php echo base_url("newscast/update/$newscast->id"); ?>"
+    <form action="<?php echo base_url("newscast/update/$newscast->newcastid"); ?>"
      class="form-horizontal" method="post" enctype="multipart/form-data">  
 
 
@@ -15,19 +15,15 @@
 
             <select type="text" class="span6" name="product_id">
 
+                <option>  <?php echo $newscast->titlee; ?> </option>
+
                 <?php foreach ($products as $product) { ?>
 
-                <option value="<?php echo $product->id; ?>"> 
+                <option value="<?php echo $product->productid; ?>"> 
 
-                    <?php echo $product->title; ?>
+                    <?php echo $product->titlee; ?>
 
                 </option>
-
-
-                <!-- <option <?php if ($product->id==$newscast->id) { echo "selected='select'"; } ?> value="<?php echo $product->id ?>"><?php echo $product->title; ?></option> -->
-
-
-
 
             <?php } ?>  
     
