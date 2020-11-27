@@ -35,7 +35,8 @@
  * @since	Version 1.0.0
  * @filesource
  */
-
+// phpinfo(); boyle yazarsan baslangıcta bu gelir direk
+// exit;
 /*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT

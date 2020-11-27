@@ -3,7 +3,6 @@
 <head>
 	<?php $this->load->view("includes/head"); ?>
 	<?php $this->load->view("category_list/page_style"); ?>
-	
 </head>
 <body class="fixed-top">
 	
@@ -20,7 +19,7 @@
 			<!-- BEGIN PAGE CONTAINER-->
 			<div class="container-fluid">
 				<?php $this->load->view("category_list/breadcrubm"); ?>
-				
+
 				
 				<?php $this->load->view("category_list/main_content"); ?>
 				

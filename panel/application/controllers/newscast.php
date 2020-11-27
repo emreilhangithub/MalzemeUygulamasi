@@ -12,6 +12,8 @@ class Newscast extends CI_Controller {
 			redirect(base_url().'login'); 
 		}
 		$this->load->model("NewscastModel");
+		
+        
 
 	}
 

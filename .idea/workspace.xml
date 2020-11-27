@@ -2,67 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7b2938f-09fa-417d-a509-1b68b69a0659" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/html/metroLab-master/invoice.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/metroLab-master/invoice.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/config/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/config/autoload.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/config/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/config/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/controllers/Kategori.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/controllers/Kategori.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/controllers/category.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/controllers/category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/controllers/contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/controllers/contact.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/controllers/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/controllers/home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/controllers/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/controllers/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/controllers/message.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/controllers/message.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/controllers/newscast.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/controllers/newscast.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/controllers/order.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/controllers/order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/controllers/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/controllers/product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/controllers/purchase.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/controllers/purchase.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/controllers/supplier.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/controllers/supplier.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/controllers/welcome.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/helpers/tools_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/helpers/tools_helper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/models/AuthorizedModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/models/AuthorizedModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/models/Book_model.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/models/NewscastModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/models/NewscastModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/models/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/authorized_add/main_content.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/authorized_add/main_content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/authorized_edit/main_content.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/authorized_edit/main_content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/authorized_list/breadcrubm.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/authorized_list/breadcrubm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/authorized_list/main_content.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/authorized_list/main_content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/category_list/breadcrubm.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/category_list/breadcrubm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/category_list/main_content.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/category_list/main_content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/category_list/page_script.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/category_list/page_script.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/category_list/page_style.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/category_list/page_style.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/contact_list/breadcrubm.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/contact_list/breadcrubm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/home/breadcrubm.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/home/breadcrubm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/includes/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/includes/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/includes/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/includes/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/includes/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/includes/sidebar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/message_edit/main_content.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/message_edit/main_content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/message_list/breadcrubm.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/message_list/breadcrubm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/message_list/main_content.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/message_list/main_content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/newscast_add/main_content.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/newscast_add/main_content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/newscast_edit/main_content.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/newscast_edit/main_content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/newscast_list/breadcrubm.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/newscast_list/breadcrubm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/newscast_list/main_content.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/newscast_list/main_content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/order_add/main_content.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/order_add/main_content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/order_edit/main_content.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/order_edit/main_content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/order_list/breadcrubm.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/order_list/breadcrubm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/order_list/main_content.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/order_list/main_content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/product_add/main_content.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/product_add/main_content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/product_edit/main_content.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/product_edit/main_content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/product_list/breadcrubm.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/product_list/breadcrubm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/product_list/main_content.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/product_list/main_content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/product_list/page_script.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/product_list/page_script.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/product_list/page_style.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/product_list/page_style.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/purchase_add/main_content.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/purchase_add/main_content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/purchase_edit/main_content.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/purchase_edit/main_content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/purchase_list/breadcrubm.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/purchase_list/breadcrubm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/purchase_list/main_content.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/purchase_list/main_content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/supplier_edit/main_content.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/supplier_edit/main_content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/supplier_edit/select.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/supplier_list/breadcrubm.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/supplier_list/breadcrubm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/application/views/supplier_list/main_content.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/supplier_list/main_content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/uploads/mustafaemreilhan.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/panel/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +36,8 @@
       <updated>1606127612291</updated>
       <workItem from="1606127614477" duration="14480000" />
       <workItem from="1606158653204" duration="249000" />
-      <workItem from="1606202805178" duration="304000" />
+      <workItem from="1606202805178" duration="1665000" />
+      <workItem from="1606210678796" duration="619000" />
     </task>
     <servers />
   </component>
@@ -107,6 +49,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="446" y="23" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1606141447111" />
+    <state x="740" y="262" key="FileChooserDialogImpl" timestamp="1606212382330">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="262" key="FileChooserDialogImpl/1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1606212382330" />
     <state x="667" y="119" width="585" height="801" key="find.popup" timestamp="1606133282814">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

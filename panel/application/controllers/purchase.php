@@ -96,21 +96,21 @@ class Purchase extends CI_Controller {
 		if ($insert) {      
 
 			//burda ürün idsine göre seçilen ürünün ozelliklerini ekrana bastık 
-			$product_id = $this->input->post("product_id");
-			$quantity = $this->input->post("quantity");
-			$price = $this->input->post("price");
+			// $product_id = $this->input->post("product_id");
+			// $quantity = $this->input->post("quantity");
+			// $price = $this->input->post("price");
 			
-			$product = $this->db->where("id",$product_id)->get("product")->row(); 
+			// $product = $this->db->where("id",$product_id)->get("product")->row(); 
 
-		    $old_quantity = $product->quantity;
-		    $new_quantity = $old_quantity + $quantity;
+		 //    $old_quantity = $product->quantity;
+		 //    $new_quantity = $old_quantity + $quantity;
 
-		    $data = array(
-		    	"quantity"   => $new_quantity,
-		    	"list_price" => $price
-		    );
+		 //    $data = array(
+		 //    	"quantity"   => $new_quantity,
+		 //    	"list_price" => $price
+		 //    );
 
-		    $update = $this->db->where("id",$product_id)->update("product",$data);
+		 //    $update = $this->db->where("id",$product_id)->update("product",$data);
 
 
 			
