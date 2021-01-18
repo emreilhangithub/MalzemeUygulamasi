@@ -13,13 +13,13 @@
         <thead>
             <tr>
                 <th><i class="icon-sort-by-order"></i>Kno</th>
-                <th><i class="icon-bullhorn"></i>İsim Soyisim</th>
-                <th><i class="icon-bullhorn"></i>Adress</th>
-                <th><i class="icon-phone"></i>Telefon</th>
+              <!--   <th><i class="icon-bullhorn"></i>İsim Soyisim</th>
+                <th><i class="icon-bullhorn"></i>Adress</th> -->
+                <!-- <th><i class="icon-phone"></i>Telefon</th> -->
                 <th><i class="icon-cogs"></i> Fiyat</th>
-                <th><i class="icon-phone"></i>Şehir</th>                
-                <th><i class="icon-calendar"></i>Tarih</th>               
-                <th><i class="icon-phone"></i>Kargo</th>                
+               <!--  <th><i class="icon-phone"></i>Şehir</th>                
+                <th><i class="icon-calendar"></i>Tarih</th>    -->            
+               <!--  <th><i class="icon-phone"></i>Kargo</th>  -->               
                 <th><i class="icon-phone"></i>TakipN.</th>                
                 <th><i class="icon-phone"></i>Durum</th>                
                 <th><i class="icon-phone"></i>İşlem</th>                
@@ -59,10 +59,10 @@
                   <td> 
                     #<?php echo $sn; ?> 
                   </td> 
-                   <td> 
+                   <!-- <td> 
                     <?php echo $liste->ordername; ?> 
-                  </td>
-                  <td>
+                  </td> -->
+                 <!--  <td>
                   <?php 
 
                     $adress = $liste->orderadress;
@@ -78,25 +78,25 @@
                     }
 
                      ?>
-                     </td>
+                     </td> -->
                    <!-- <td> 
                     <?php echo $liste->orderadress; ?> 
                   </td> -->
-                   <td> 
+                  <!--  <td> 
                     <?php echo $liste->orderphone; ?> 
-                  </td>
+                  </td> -->
                    <td> 
                     <?php echo $liste->total_amount; ?> 
                   </td>
-                   <td> 
+                 <!--   <td> 
                     <?php echo $liste->ordercity; ?> 
-                  </td>
-                   <td> 
+                  </td> -->
+                   <!-- <td> 
                     <?php echo $liste->orderdate; ?> 
-                  </td> 
-                   <td> 
+                  </td>  -->
+                  <!--  <td> 
                     <?php echo $liste->cargo; ?> 
-                  </td> 
+                  </td>  -->
                    <td> 
                     <?php echo $liste->cargo_number; ?> 
                   </td>                                  

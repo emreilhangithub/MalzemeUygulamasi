@@ -7,7 +7,7 @@ class Home extends CI_Controller {
 	{
 		parent::__construct();
 
-		if (!$this->session->userdata("oturum_data")) { //kullanıcı giriş yapmadan linke basarsa 
+		if (!$this->session->userdata("oturum_data")) { //kullanıcı giriş yapmadan linke basarsa
 			$this->session->set_flashdata("login_hata","Sayfalara Erişebilmek İçin Giriş Yap"); //bu mesajı ver  ve
 			redirect(base_url().'login'); // bu sayfaya yönlendir
 		}

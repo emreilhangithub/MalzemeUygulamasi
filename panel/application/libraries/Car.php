@@ -1,19 +1,21 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-class Car {
-    public $color;
-    public $model;
-    public function __construct($color, $model) {
-        $this->color = $color;
-        $this->model = $model;
+class Car
+{
+
+    public function message($dizi) {
+        if (is_array($dizi))//array olup olmadıgını kontrol eder dısarıdan gelir veri
+        {
+            return "Bu bir dizidir <br>"; //direk echo ile de basılır
+        }
+        else {return "bu bir dizi degildir";}
     }
-    public function message() {
-        return "My car is a " . $this->color . " " . $this->model . "!";
-    }
+
+
 }
 
-$myCar = new Car("black", "Volvo");
-echo $myCar -> message();
-echo "<br>";
-$myCar = new Car("red", "Toyota");
-echo $myCar -> message();
+
+
+
+
+
+

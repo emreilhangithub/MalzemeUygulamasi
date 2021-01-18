@@ -83,6 +83,15 @@
                       </ul>
                   </li>
 
+
+
+                  <li class="sub-menu">
+                      <a class="" href="<?php echo base_url("receivedorders") ?>">
+                          <i class="icon-map-marker"></i>
+                          <span>Siparişler</span>
+                      </a>
+                  </li>
+
                   <li class="sub-menu">
                       <a class="" href="<?php echo base_url("contact") ?>">
                           <i class="icon-map-marker"></i>

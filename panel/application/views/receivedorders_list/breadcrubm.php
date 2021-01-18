@@ -3,7 +3,7 @@
    <div class="span12">
     <!-- BEGIN PAGE TITLE & BREADCRUMB-->
     <h3 class="page-title">
-     Siparişlerim
+     Siparişler
    </h3>
    <?php if ($this->session->flashdata('silmebasarili' || $this->session->flashdata('eklemebasarili'))
 

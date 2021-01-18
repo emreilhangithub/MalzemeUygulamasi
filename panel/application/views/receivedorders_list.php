@@ -2,7 +2,7 @@
 <html>
 <head>
 	<?php $this->load->view("includes/head"); ?>
-	<?php $this->load->view("receivedorder_list/page_style"); ?>
+	<?php $this->load->view("receivedorders_list/page_style"); ?>
 </head>
 <body class="fixed-top">
 	
@@ -18,10 +18,10 @@
 		<div id="main-content">
 			<!-- BEGIN PAGE CONTAINER-->
 			<div class="container-fluid">
-				<?php $this->load->view("receivedorder_list/breadcrubm"); ?>
+				<?php $this->load->view("receivedorders_list/breadcrubm"); ?>
 
 				
-				<?php $this->load->view("receivedorder_list/main_content"); ?>
+				<?php $this->load->view("receivedorders_list/main_content"); ?>
 				
 
 			</div>
@@ -34,7 +34,7 @@
 
 	<!--  footer -->
 	<?php $this->load->view("includes/footer"); ?>
-	<?php $this->load->view("receivedorder_list/page_script"); ?>
+	<?php $this->load->view("receivedorders_list/page_script"); ?>
 	<!--  #footer -->
 </body>
 </html>

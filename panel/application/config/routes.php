@@ -101,5 +101,11 @@ $route["basket/(.*)"] = "basket/$1";
 $route["receivedorder"] = "receivedorder/index";
 $route["receivedorder/(.*)"] = "receivedorder/$1";
 
+$route["Test"] = "Test/index";
+$route["Test/(.*)"] = "Test/$1";
+
+$route["receivedorders"] = "receivedorders/index";
+$route["receivedorders/(.*)"] = "receivedorders/$1";
+
 
 $route["^(.*)"] = "index/$1";
