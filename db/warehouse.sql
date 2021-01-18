@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 27 Kas 2020, 15:02:20
+-- Üretim Zamanı: 18 Oca 2021, 13:11:06
 -- Sunucu sürümü: 10.4.14-MariaDB
 -- PHP Sürümü: 7.2.34
 
@@ -51,7 +51,8 @@ INSERT INTO `authorized` (`id`, `supplier_id`, `name`, `tel`, `mail`, `isActive`
 (11, 16, 'halkbank yetkili', '63515315315', 'sadfdsasfda@hotmail.com', 1),
 (14, 14, 'test4', '53153153153', 'mustafaemreilhan@hotmail.com', 1),
 (18, 2, 'sadfdsafdas', '05368900207', 'safakkekci@hotmail.com', 1),
-(22, 16, 'mustafa', '05368900207', 'safakkekci@hotmail.com', 1);
+(22, 16, 'mustafa', '05368900207', 'safakkekci@hotmail.com', 1),
+(23, 16, 'emrah atalay', '53443232432', 'emrah.atalay@btibilisim.com', 1);
 
 -- --------------------------------------------------------
 
@@ -72,7 +73,10 @@ CREATE TABLE `basket` (
 --
 
 INSERT INTO `basket` (`basket_id`, `user_id`, `product_id`, `basket_date`, `basket_quentity`) VALUES
-(28, '2', '180', '22.11.2020 22:23:10', 2);
+(28, '2', '180', '22.11.2020 22:23:10', 2),
+(41, '1', '180', '09.12.2020 12:10:12', 1),
+(42, '1', '181', '18.12.2020 15:18:43', 1),
+(43, '1', '181', '17.01.2021 23:02:38', 1);
 
 -- --------------------------------------------------------
 
@@ -152,7 +156,7 @@ INSERT INTO `contact` (`id`, `name`, `phone`, `message`, `date`, `email`, `user`
 (14, 'mustafa', '11111111111', 'sdafsdaffdsafasd', '19.11.2020', 'dsfasad@hotmail.com', '', '', '', ''),
 (15, 'ahmet zafer', '55555555555', 'asdmksdçamndfas', '19.11.2020', 'mustafaemreilhan1903@gmail.com', '', '', '', ''),
 (16, 'mehmet sevinc ', '05368900207', 'kolay gelsin beni arar mısınız\r\n', '19.11.2020', 'mehmetsevinc@hotmail.com', '', '', '', ''),
-(17, 'mustafa', '12312312312', 'merhaaba', '19.11.2020', 'sadffsdadf@hotmail.com', '', '', '', ''),
+(17, 'mustafa', '12312312312', 'merhaaba', '19.11.2020', 'sadffsdadf@hotmail.com', '', 'okundu', '', '               seşamö\r\n    '),
 (18, 'emir ferhat', '11111111111', 'merhaba site cok guzel olmus ellerinize saglık ', '19.11.2020', 'emirferhat@hotmail.com', '', 'okundu', '', ''),
 (21, 'erdem mete', '56453453453', 'merhaba kral nasılsın', '19.11.2020', 'erdemmete@hotmail.com', '', 'tamamlandi', '', ' tamamlandı\r\n    '),
 (22, 'fdsasfd', '53689002077', 'dsfafdsafasdfads', '19.11.2020', 'mustafaemreilhan1903@gmail.com', 'mustafa emre ilhan', 'okundu', '78.165.64.178', ''),
@@ -293,7 +297,11 @@ INSERT INTO `orderproduct` (`opid`, `order_id`, `op_userid`, `op_productid`, `op
 (34, 55, 1, 181, 'testt', 354, 1, 354, '2020-11-23 12:23:52'),
 (35, 56, 1, 181, 'testt', 354, 2, 708, '2020-11-23 19:07:34'),
 (36, 57, 1, 181, 'testt', 354, 1, 354, '2020-11-23 19:17:42'),
-(37, 58, 1, 181, 'testt', 354, 10, 3540, '2020-11-23 20:24:50');
+(37, 58, 1, 181, 'testt', 354, 10, 3540, '2020-11-23 20:24:50'),
+(38, 59, 1, 181, 'testt', 354, 1, 354, '2020-12-09 08:55:28'),
+(39, 60, 1, 180, 'muhasebe', 118, 5, 590, '2020-12-09 08:59:18'),
+(40, 61, 1, 180, 'muhasebe', 118, 2, 236, '2020-12-09 09:01:07'),
+(41, 62, 1, 180, 'muhasebe', 118, 3, 354, '2020-12-09 09:03:00');
 
 -- --------------------------------------------------------
 
@@ -422,28 +430,33 @@ CREATE TABLE `receivedorder` (
   `orderdate` varchar(255) COLLATE utf8_turkish_ci NOT NULL DEFAULT current_timestamp(),
   `orderip` varchar(255) COLLATE utf8_turkish_ci NOT NULL,
   `cargo` varchar(255) COLLATE utf8_turkish_ci NOT NULL,
-  `cargo_number` int(11) NOT NULL
+  `cargo_number` int(11) NOT NULL,
+  `cardno` varchar(255) COLLATE utf8_turkish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
 
 --
 -- Tablo döküm verisi `receivedorder`
 --
 
-INSERT INTO `receivedorder` (`orderid`, `orderuserid`, `ordername`, `orderadress`, `orderphone`, `total_amount`, `ordercity`, `status`, `orderdate`, `orderip`, `cargo`, `cargo_number`) VALUES
-(41, 1, 'mustafa emre ilhan', 'Mahmutbey mahallesi, Taşocağı cad. No:24,\r\n34217 - Bağcılar', '5368900205', 482.1, 'İstanbul', 'Kargoda', '22.11.2020 19:17:34', '::1', 'Aras', 31231231),
-(42, 1, 'mustafa emre ilhan', 'izzettin çalışlar cad. albay ibrahim karaoglanoglu sok. adatepe kardesler apt', '5368900205', 354, 'İstanbul', 'Yeni', '22.11.2020 19:20:23', '::1', 'Mng', 0),
-(43, 1, 'mustafa emre ilhan', 'cennet mahallesi hürriyet caddesi cami sokak no 15 daires 8 Küçükçekmece', '5368900205', 354, 'İstanbul', 'Yeni', '22.11.2020 19:24:19', '::1', '', 0),
-(44, 1, 'mustafa emre ilhan', '19 mayis mh. 19 mayis cd. 19 mayis apt.', '5368900205', 354, 'İstanbul', 'Yeni', '22.11.2020 19:31:34', '::1', '', 0),
-(46, 1, 'mustafa emre ilhan', 'Rüzgarlıbahçe Mahallesi Yavuz Sultan Selim Caddesi Aras Plaza', '5368900205', 10.1, 'İstanbul', 'Yeni', '22.11.2020 19:32:06', '::1', '', 0),
-(47, 1, 'mustafa emre ilhan', 'Taşocağı cad. No:24, 34217 - Bağcılar', '5368900205', 250.16, 'İstanbul', 'Yeni', '22.11.2020 19:34:07', '::1', '', 0),
-(51, 2, 'test test', 'mahalle', 'tel', 5003.2, 'şehir', 'Tamamlandı', '22.11.2020 20:49:05', '::1', '', 0),
-(52, 2, 'test test', 'Taşocağı cad. No:24, 34217 - Bağcılar', '', 10.1, '', 'Yeni', '22.11.2020 20:50:52', '::1', '', 0),
-(53, 2, 'test test', '', '', 10.1, '', 'Yeni', '22.11.2020 20:51:24', '::1', '', 0),
-(54, 1, 'mustafa emre ilhan', 'cennet mahallesi hürriyet caddesi cami sokak no 15 daires 8 Küçükçekmece', '5368900205', 5664, 'İstanbul', 'Yeni', '23.11.2020 11:39:24', '::1', '', 0),
-(55, 1, 'mustafa emre ilhan', 'cennet mahallesi hürriyet caddesi cami sokak no 15 daires 8 Küçükçekmece', '5368900205', 354, 'İstanbul', 'Yeni', '23.11.2020 13:23:52', '::1', '', 0),
-(56, 1, 'mustafa emre ilhan', 'cennet mahallesi hürriyet caddesi cami sokak no 15 daires 8 Küçükçekmece', '5368900205', 708, 'İstanbul', 'Yeni', '23.11.2020 20:07:34', '::1', '', 0),
-(57, 1, 'mustafa emre ilhan', 'cennet mahallesi hürriyet caddesi cami sokak no 15 daires 8 Küçükçekmece', '5368900205', 354, 'İstanbul', 'Yeni', '23.11.2020 20:17:42', '::1', '', 0),
-(58, 1, 'mustafa emre ilhan', 'cennet mahallesi hürriyet caddesi cami sokak no 15 daires 8 Küçükçekmece', '5368900205', 3540, 'İstanbul', 'Yeni', '23.11.2020 23:24:50', '::1', '', 0);
+INSERT INTO `receivedorder` (`orderid`, `orderuserid`, `ordername`, `orderadress`, `orderphone`, `total_amount`, `ordercity`, `status`, `orderdate`, `orderip`, `cargo`, `cargo_number`, `cardno`) VALUES
+(41, 1, 'mustafa emre ilhan', 'Mahmutbey mahallesi, Taşocağı cad. No:24,\r\n34217 - Bağcılar', '5368900205', 482.1, 'İstanbul', 'Kargoda', '22.11.2020 19:17:34', '::1', 'Aras', 31231231, '0'),
+(42, 1, 'mustafa emre ilhan', 'izzettin çalışlar cad. albay ibrahim karaoglanoglu sok. adatepe kardesler apt', '5368900205', 354, 'İstanbul', 'Yeni', '22.11.2020 19:20:23', '::1', 'Mng', 0, '0'),
+(43, 1, 'mustafa emre ilhan', 'cennet mahallesi hürriyet caddesi cami sokak no 15 daires 8 Küçükçekmece', '5368900205', 354, 'İstanbul', 'Yeni', '22.11.2020 19:24:19', '::1', '', 0, '0'),
+(44, 1, 'mustafa emre ilhan', '19 mayis mh. 19 mayis cd. 19 mayis apt.', '5368900205', 354, 'İstanbul', 'Yeni', '22.11.2020 19:31:34', '::1', '', 0, '0'),
+(46, 1, 'mustafa emre ilhan', 'Rüzgarlıbahçe Mahallesi Yavuz Sultan Selim Caddesi Aras Plaza', '5368900205', 10.1, 'İstanbul', 'Yeni', '22.11.2020 19:32:06', '::1', '', 0, '0'),
+(47, 1, 'mustafa emre ilhan', 'Taşocağı cad. No:24, 34217 - Bağcılar', '5368900205', 250.16, 'İstanbul', 'Yeni', '22.11.2020 19:34:07', '::1', '', 0, '0'),
+(51, 2, 'test test', 'mahalle', 'tel', 5003.2, 'şehir', 'Tamamlandı', '22.11.2020 20:49:05', '::1', '', 0, '0'),
+(52, 2, 'test test', 'Taşocağı cad. No:24, 34217 - Bağcılar', '', 10.1, '', 'Yeni', '22.11.2020 20:50:52', '::1', '', 0, '0'),
+(53, 2, 'test test', '', '', 10.1, '', 'Yeni', '22.11.2020 20:51:24', '::1', '', 0, '0'),
+(54, 1, 'mustafa emre ilhan', 'cennet mahallesi hürriyet caddesi cami sokak no 15 daires 8 Küçükçekmece', '5368900205', 5664, 'İstanbul', 'Yeni', '23.11.2020 11:39:24', '::1', '', 0, '0'),
+(55, 1, 'mustafa emre ilhan', 'cennet mahallesi hürriyet caddesi cami sokak no 15 daires 8 Küçükçekmece', '5368900205', 354, 'İstanbul', 'Yeni', '23.11.2020 13:23:52', '::1', '', 0, '0'),
+(56, 1, 'mustafa emre ilhan', 'cennet mahallesi hürriyet caddesi cami sokak no 15 daires 8 Küçükçekmece', '5368900205', 708, 'İstanbul', 'Yeni', '23.11.2020 20:07:34', '::1', '', 0, '0'),
+(57, 1, 'mustafa emre ilhan', 'cennet mahallesi hürriyet caddesi cami sokak no 15 daires 8 Küçükçekmece', '5368900205', 354, 'İstanbul', 'Yeni', '23.11.2020 20:17:42', '::1', '', 0, '0'),
+(58, 1, 'mustafa emre ilhan', 'cennet mahallesi hürriyet caddesi cami sokak no 15 daires 8 Küçükçekmece', '5368900205', 3540, 'İstanbul', 'Yeni', '23.11.2020 23:24:50', '::1', '', 0, '0'),
+(59, 1, 'mustafa emre ilhan', 'cennet mahallesi hürriyet caddesi cami sokak no 15 daires 8 Küçükçekmece', '1111111111', 354, 'İstanbul', 'Yeni', '09.12.2020 11:55:28', '::1', '', 0, '0'),
+(60, 1, 'isim soyisim', 'adress', 'telno11111', 590, 'sehir', 'Yeni', '09.12.2020 11:59:18', '::1', '', 0, '2147483647'),
+(61, 1, 'ethem', 'dsfadsaf', '3213123123', 236, 'fsadsfdasdfasfd', 'Yeni', '09.12.2020 12:01:07', '::1', '', 0, '2147483647'),
+(62, 1, 'mustafa emre ilhan', 'cennet mahallesi hürriyet caddesi cami sokak no 15 daires 8 Küçükçekmece', '5368900205', 354, 'İstanbul', 'Yeni', '09.12.2020 12:03:00', '::1', '', 0, '9999999999999987');
 
 -- --------------------------------------------------------
 
@@ -501,7 +514,8 @@ INSERT INTO `supplier` (`supplierid`, `title`, `adress`, `phone`, `email`, `isAc
 (7, 'Nebim', 'aaaaa', '12312312312', 'sfadfdsa@hotmail.com', 0),
 (9, 'iPhone', 'asdffdsafasd', '11111111111', 'mustafaemreilhan1903@gmail.com', 0),
 (14, 'albarakabank', 'sadsadfdsfasd', '11111111111', 'mustafaemreilhan1903@gmail.com', 0),
-(16, 'Halkbank', 'sadffsdasfda@safdsfdadfsFASD', '31513515313', 'mustafaemreilhan1903@gmail.comm', 1);
+(16, 'Halkbank', 'sadffsdasfda@safdsfdadfsFASD', '31513515313', 'mustafaemreilhan1903@gmail.comm', 1),
+(18, 'önder', 'önder mahallesi atatürk caddesi daire 7 no 10', '54545345345', 'dasfasdfaf@hotmail.com', 1);
 
 -- --------------------------------------------------------
 
@@ -635,13 +649,13 @@ ALTER TABLE `user`
 -- Tablo için AUTO_INCREMENT değeri `authorized`
 --
 ALTER TABLE `authorized`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `basket`
 --
 ALTER TABLE `basket`
-  MODIFY `basket_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `basket_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `category`
@@ -677,7 +691,7 @@ ALTER TABLE `order`
 -- Tablo için AUTO_INCREMENT değeri `orderproduct`
 --
 ALTER TABLE `orderproduct`
-  MODIFY `opid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `opid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `polines`
@@ -701,7 +715,7 @@ ALTER TABLE `purchase`
 -- Tablo için AUTO_INCREMENT değeri `receivedorder`
 --
 ALTER TABLE `receivedorder`
-  MODIFY `orderid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `orderid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `sales`
@@ -713,7 +727,7 @@ ALTER TABLE `sales`
 -- Tablo için AUTO_INCREMENT değeri `supplier`
 --
 ALTER TABLE `supplier`
-  MODIFY `supplierid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `supplierid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `user`
