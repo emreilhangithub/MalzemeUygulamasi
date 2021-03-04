@@ -1,10 +1,6 @@
 
 <!-- BEGIN PAGE CONTENT-->
 
-
-<a href="<?php echo base_url("product"); ?>" class="btn btn-success"><i class="icon-ok"></i>Ekle</a>
-    <br><br>
-
 <div class="row-fluid">
 
 
@@ -130,9 +126,6 @@
 <form action="<?php echo base_url("receivedorder/save"); ?>"
        class="form-horizontal" method="post">     --> 
 
-   
-    <a type="button" class="btn" 
-    href="<?php echo base_url("product"); ?>">Alışverişe Devam Et</a>
     </div>
        
       <!--  </form>   -->

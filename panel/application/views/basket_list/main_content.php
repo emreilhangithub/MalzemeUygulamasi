@@ -111,18 +111,18 @@
 
        <h3> Adres Bilgileri </h3>   
 
-       Alıcının Adı Soyadı =  <input type="text" name="ordername" value="<?php echo $user->user; ?>" >   <br>
-       Adresi =   <input type="text" name="orderadress" value="<?php echo $user->adress; ?>" >   <br>
-       Telefonu =   <input type="text" name="orderphone" value="<?php echo $user->phone; ?>" >  <br>
-       Şehir =   <input type="text" name="ordercity" value="<?php echo $user->city; ?>" >   <br>
+       Alıcının Adı Soyadı =  <input type="text" name="ordername" value="<?php echo $user->user; ?>" required="" >   <br>
+       Adresi =   <input type="text" name="orderadress" value="<?php echo $user->adress; ?>" required="">   <br>
+       Telefonu =   <input type="text" name="orderphone" value="<?php echo $user->phone; ?>" required="" minlength="10" maxlength="10">  <br>
+       Şehir =   <input type="text" name="ordercity" value="<?php echo $user->city; ?>" required="">   <br>
        Toplam Tutar =   <input type="text" name="total_amount"  readonly value="<?php echo $top; ?>" > 
 
         <h3> Ödeme Bilgileri </h3>   
 
-       Kredi Kartı  Kart No =  <input type="text" name="cardno">  <br>
-       SKT AY =   <input type="text" name="moon">   <br>
-       SKT YIL =   <input type="text" name="year">  <br>
-       Güvenkik Kodu =   <input type="text" name="scode">
+       Kredi Kartı  Kart No =  <input type="text" name="cardno" minlength="16" maxlength="16" required="">  <br>
+       SKT AY =   <input type="text" name="moon" required="" minlength="2" maxlength="2">   <br>
+       SKT YIL =   <input type="text" name="year" required="" minlength="4" maxlength="4">  <br>
+       Güvenkik Kodu =   <input type="text" name="scode" required="">
 
         <?php  } ?>
 

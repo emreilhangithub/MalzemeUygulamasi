@@ -54,7 +54,8 @@ class Receivedorder extends CI_Controller {
         'orderadress' => $this->input->post("orderadress"),
          'orderphone' =>  $this->input->post("orderphone"), 
          'ordercity' =>  $this->input->post("ordercity"),   
-         'total_amount' =>  $this->input->post("total_amount")  
+         'total_amount' =>  $this->input->post("total_amount"),
+         'cardno' =>  $this->input->post("cardno")
         
     );
 

@@ -1,9 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="e7b2938f-09fa-417d-a509-1b68b69a0659" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/panel/application/controllers/Receivedorders.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/panel/application/controllers/Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/panel/application/libraries/Car.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/panel/application/libraries/Exde.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/panel/application/libraries/Libim.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/panel/application/libraries/MirasVeren.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/panel/application/libraries/Oop.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/panel/application/libraries/Sayilar.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/panel/application/views/receivedorders_list.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/panel/application/views/receivedorders_list/breadcrubm.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/panel/application/views/receivedorders_list/main_content.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/panel/application/views/receivedorders_list/page_script.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/panel/application/views/receivedorders_list/page_style.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/panel/application/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/config/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/panel/application/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/config/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/panel/application/controllers/Basket.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/controllers/Basket.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/panel/application/controllers/Receivedorder.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/controllers/Receivedorder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/panel/application/controllers/category.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/controllers/category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/panel/application/controllers/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/controllers/home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/panel/application/libraries/Fruit.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/panel/application/libraries/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/panel/application/views/basket_list/main_content.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/basket_list/main_content.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/panel/application/views/includes/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/includes/sidebar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/panel/application/views/orderproduct_list/main_content.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/orderproduct_list/main_content.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/panel/application/views/receivedorder_list/main_content.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel/application/views/receivedorder_list/main_content.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,6 +54,13 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -22,9 +71,20 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../kdintegrator" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/panel/application/controllers/Basket.php" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\MaterialApplication\panel\application\views" />
+      <recent name="C:\xampp\htdocs\MaterialApplication\panel\application\controllers" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -38,28 +98,126 @@
       <workItem from="1606158653204" duration="249000" />
       <workItem from="1606202805178" duration="1665000" />
       <workItem from="1606210678796" duration="619000" />
+      <workItem from="1606810584045" duration="17987000" />
+      <workItem from="1606890977375" duration="28856000" />
+      <workItem from="1606977413471" duration="27994000" />
+      <workItem from="1607024819518" duration="2920000" />
+      <workItem from="1607031706084" duration="10000" />
+      <workItem from="1607062659215" duration="9394000" />
+      <workItem from="1607149118133" duration="2564000" />
+      <workItem from="1607278369909" duration="62000" />
+      <workItem from="1607323997603" duration="16600000" />
+      <workItem from="1607510246571" duration="883000" />
+      <workItem from="1607515476073" duration="13000" />
+      <workItem from="1608037366279" duration="5442000" />
+      <workItem from="1608283399641" duration="1289000" />
+      <workItem from="1608293726717" duration="1004000" />
+      <workItem from="1608369790770" duration="987000" />
+      <workItem from="1608532253009" duration="14000" />
+      <workItem from="1608533851041" duration="173000" />
+      <workItem from="1608534466508" duration="72000" />
+      <workItem from="1609139370931" duration="63000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="446" y="23" key="#com.intellij.ide.util.MemberChooser" timestamp="1606141447111">
+    <state x="0" y="0" key="#Live_Templates" timestamp="1606997600410">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="446" y="23" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1606141447111" />
-    <state x="740" y="262" key="FileChooserDialogImpl" timestamp="1606212382330">
+    <state x="0" y="0" key="#Live_Templates/0.0.1280.680@0.0.1280.680" timestamp="1606997600410" />
+    <state x="404" y="143" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606999631349">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="404" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1606999631349" />
+    <state x="446" y="23" key="#com.intellij.ide.util.MemberChooser" timestamp="1607002885025">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="446" y="23" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1607002885025" />
+    <state x="57" y="117" width="1095" height="495" maximized="true" key="DiffContextDialog" timestamp="1607063791929">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="57" y="117" width="1095" height="495" maximized="true" key="DiffContextDialog/0.0.1280.680@0.0.1280.680" timestamp="1607063791929" />
+    <state x="740" y="262" key="FileChooserDialogImpl" timestamp="1609139431884">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="740" y="262" key="FileChooserDialogImpl/-1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1609139431884" />
+    <state x="493" y="171" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1607515486447" />
     <state x="740" y="262" key="FileChooserDialogImpl/1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1606212382330" />
-    <state x="667" y="119" width="585" height="801" key="find.popup" timestamp="1606133282814">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1237" height="142" key="GridCell.Tab.0.bottom" timestamp="1607000137200">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state width="1237" height="142" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1607000137200" />
+    <state width="1237" height="142" key="GridCell.Tab.0.center" timestamp="1607000137199">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="142" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1607000137199" />
+    <state width="1237" height="142" key="GridCell.Tab.0.left" timestamp="1607000137199">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="142" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1607000137199" />
+    <state width="1237" height="142" key="GridCell.Tab.0.right" timestamp="1607000137200">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="142" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1607000137200" />
+    <state x="365" y="64" key="NewPhpClassDialog" timestamp="1606999661511">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="365" y="64" key="NewPhpClassDialog/0.0.1280.680@0.0.1280.680" timestamp="1606999661511" />
+    <state x="477" y="264" key="NewPhpFileDialog" timestamp="1607337865716">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="477" y="264" key="NewPhpFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1607337865716" />
+    <state x="142" y="0" key="SettingsEditor" timestamp="1607065766114">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1607065766114" />
+    <state x="93" y="93" width="1095" height="495" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1607000175701">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="93" y="93" width="1095" height="495" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1280.680@0.0.1280.680" timestamp="1607000175701" />
+    <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607149204078">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1607149204078" />
+    <state x="445" y="78" width="557" height="534" key="find.popup" timestamp="1606997347118">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="445" y="78" width="557" height="534" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1606997347118" />
     <state x="667" y="119" width="585" height="801" key="find.popup/1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1606133282814" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1606133380323">
+    <state x="297" y="151" key="run.anything.popup" timestamp="1607338263421">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1607338263421" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1608042808577">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1606133380323" />
+    <state x="415" y="147" width="672" height="444" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1606997319684" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1608042808577" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/panel/application/controllers/home.php</url>
+          <line>9</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

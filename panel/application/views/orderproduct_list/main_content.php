@@ -2,41 +2,63 @@
 <!-- BEGIN PAGE CONTENT-->
 
 
-<a href="<?php echo base_url("product"); ?>" class="btn btn-success"><i class="icon-ok"></i>Ekle</a>
-    <br><br>
-
     <table border="1">
-      
-      <th>İsim</th>
-      <th>Adresi</th>
-      <th>Telefonu</th>
-      <th>Şehir</th>
-      <th>Toplam Tutar</th>
+
+      <tbody>
+
+         <h3> Sipariş Bilgileri </h3> 
+
+         <?php foreach ($getir as $get ) { ?>
+
+          <tr>
+                <td> Sipariş Numarası = </td><td><?php echo $get->orderid; ?></td>
+            </tr>
+
+            <tr>
+                <td> İsim = </td><td><?php echo $get->ordername; ?></td>
+            </tr>
+            <tr>
+                <td> Adresi = </td><td><?php echo $get->orderadress; ?></td>
+            </tr>
+            <tr>
+                <td> Telefonu = </td><td><?php echo $get->orderphone; ?></td>
+            </tr>            
+            <tr>
+                <td> Toplam Tutar = </td><td><?php echo $get->total_amount; ?></td>
+            </tr>    
+            <tr>
+                <td> Şehir = </td><td><?php echo $get->ordercity; ?></td>
+            </tr>   
+            <tr>
+                <td> Tarih = </td><td><?php echo $get->orderdate; ?></td>
+            </tr> 
+            <tr>
+                <td> Kargo = </td><td><?php echo $get->cargo; ?></td>
+            </tr> 
+            <tr>
+                <td> Takip Numarası = </td><td><?php echo $get->cargo_number; ?></td>
+            </tr> 
+            <tr>
+                <td> Durum = </td><td><?php echo $get->status; ?></td>
+            </tr> 
+             <tr>
+                <td> Kredi Kartı  Kart No = </td><td><?php echo $get->cardno; ?></td>
+            </tr> 
+    
+        </tbody>
+          <?php  } ?>
 
     </table>
 
 
-    <h3> Adres Bilgileri </h3>   
+  
+  <br>
 
-    
-     
-   
-       <?php foreach ($getir as $get ) { ?>
-      
-            <input type="text" name="orderadress" value="<?php echo $get->ordername; ?>" >   
-        =   <input type="text" name="orderadress" value="<?php echo $get->orderadress; ?>" >   <br>
-        =   <input type="text" name="orderphone" value="<?php echo $get->orderphone; ?>" >  <br>
-        =   <input type="text" name="ordercity" value="<?php echo $get->ordercity; ?>" >   <br>
-        =   <input type="text" value="<?php echo $get->total_amount; ?>" > 
 
-        <h3> Ödeme Bilgileri </h3>   
 
-       Kredi Kartı  Kart No =  <input type="text" name="cardno" value="<?php echo $get->user; ?>">  <br>
-       SKT AY =   <input type="text" name="moon" value="<?php echo $get->user; ?>">   <br>
-       SKT YIL =   <input type="text" name="year" value="<?php echo $get->user; ?>">  <br>
-       Güvenkik Kodu =   <input type="text" name="scode" value="<?php echo $get->user; ?>"> 
+       
 
-         <?php  } ?>
+         
 
 <div class="row-fluid">
 

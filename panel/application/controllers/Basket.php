@@ -19,9 +19,10 @@ class Basket extends CI_Controller {
 
     public function index()
     {
-    	$userid =  $this->session->oturum_data['userid'];
+    	$userid =  $this->session->oturum_data['userid'];//session cagırdık user id aldık
 
-    	$user = $this->db->query("SELECT * FROM user WHERE user.id=$userid")->row();
+    	$user = $this->db->query("SELECT * FROM user WHERE user.id=$userid")->row(); //user bilgileri cagırdık
+
 
     	$listele = $this->db->query("SELECT basket.*,product.titlee as urunadi, product.total_list as urunfiyat
 		FROM `basket` 
