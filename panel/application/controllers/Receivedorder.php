@@ -122,10 +122,11 @@ class Receivedorder extends CI_Controller {
     public function orderproduct($id)
     { 
 
-     $userid =  $this->session->oturum_data['userid'];   
+     $userid =  $this->session->oturum_data['userid'];
+     $authority =  $this->session->oturum_data['authority'];    //kullanıcı yetkisini sorduk
 
     $where = array(
-            'op_userid' =>  $userid,
+            //'op_userid' =>  $userid, //todo bu şartı kaldırdıkki anakullanıcı siparişin içini gorsun yoksa goremez
             'order_id'  =>  $id       
         ); 
 
@@ -137,19 +138,18 @@ class Receivedorder extends CI_Controller {
      $listele = $this->ReceivedorderModel->rowselectt($where);
      $getir = $this->ReceivedorderModel->rowselect($wheretwo);
 
-
      $viewData = array(
      'listele' => $listele,
      'getir' =>$getir
     );
-
     
     foreach ($getir as $row) //foreach sutunlara ulas TODO
     
     $kullanici = $row->orderuserid; // sipariş tablosundan kullanıcıyı bulTODO
     
-     if($userid == $kullanici) 
+     if($userid == $kullanici || $authority=="admin")  
      //eğer $userid == $kullanici  o zaman siparişi gör TODO
+     // veya $authority == admin de ekledim yani admin ise
 
      {
         $this->load->view('orderproduct_list',$viewData); 

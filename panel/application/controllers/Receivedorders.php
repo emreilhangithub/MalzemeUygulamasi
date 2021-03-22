@@ -20,13 +20,26 @@ class Receivedorders extends CI_Controller {
 
     public function index()
     {
-    
+
+    $userid =  $this->session->oturum_data['userid']; 
+    $authority =  $this->session->oturum_data['authority'];  
+
     $listele = $this->ReceivedorderModel->select();
 
     $viewData = array(
     'listele' => $listele);
 
-       $this->load->view('receivedorders_list',$viewData);
+    if($authority=="admin") //admin olup olmadıgına bakıyoruz TODO
+    {
+        $this->load->view('receivedorders_list',$viewData);
+    }    
+
+    else
+    {
+        redirect(base_url('receivedorder'));
+    }
+
+       
     
 
  }
