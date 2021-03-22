@@ -120,9 +120,9 @@ class Receivedorder extends CI_Controller {
 
 
     public function orderproduct($id)
-    {
+    { 
 
-     $userid =  $this->session->oturum_data['userid'];
+     $userid =  $this->session->oturum_data['userid'];   
 
     $where = array(
             'op_userid' =>  $userid,
@@ -143,7 +143,28 @@ class Receivedorder extends CI_Controller {
      'getir' =>$getir
     );
 
-   $this->load->view('orderproduct_list',$viewData);   
+    
+    foreach ($getir as $row) //foreach sutunlara ulas TODO
+    
+    $kullanici = $row->orderuserid; // sipariş tablosundan kullanıcıyı bulTODO
+    
+     if($userid == $kullanici) 
+     //eğer $userid == $kullanici  o zaman siparişi gör TODO
+
+     {
+        $this->load->view('orderproduct_list',$viewData); 
+     }
+
+     else { //aynı degılse siparişlerime geri don
+        redirect(base_url('receivedorder'));
+    }
+    
+
+   
+    
+    
+
+     
 
     
     
