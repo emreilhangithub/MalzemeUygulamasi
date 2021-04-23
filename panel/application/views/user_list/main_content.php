@@ -1,6 +1,25 @@
 
 <!-- BEGIN PAGE CONTENT-->
-
+<input id="toggle-trigger" type="checkbox" data-toggle="toggle">
+<button class="btn btn-success" onclick="toggleOn()">On by API</button>
+<button class="btn btn-danger" onclick="toggleOff()">Off by API</button>
+<button class="btn btn-success" onclick="toggleOnByInput()">On by Input</button>
+<button class="btn btn-danger" onclick="toggleOffByInput()">Off by Input</button>
+<!-- https://www.bootstraptoggle.com/ -->
+<script>
+  function toggleOn() {
+    $('#toggle-trigger').bootstrapToggle('on')
+  }
+  function toggleOff() {
+    $('#toggle-trigger').bootstrapToggle('off')  
+  }
+  function toggleOnByInput() {
+    $('#toggle-trigger').prop('checked', true).change()
+  }
+  function toggleOffByInput() {
+    $('#toggle-trigger').prop('checked', false).change()
+  }
+</script>
 
 <a href="<?php echo base_url("user/newPage"); ?>" class="btn btn-success"><i class="icon-ok"></i>Ekle</a>
     <br><br>
