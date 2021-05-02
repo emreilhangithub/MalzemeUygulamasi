@@ -193,6 +193,12 @@ public function delete($id)
 	public function update($id)
 
 	{
+
+		
+		//echo "<pre>";
+		//print_r($this->input->post());
+		//echo $isActive = $this->input->post("isActive");
+		//exit;
 	
 		$product_id = $this->input->post("product_id");
 		$title = $this->input->post("title");

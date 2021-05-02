@@ -52,13 +52,15 @@ class User extends CI_Controller {
 
 	{
 
-		$viewData = new stdClass();
+		//$viewData = new stdClass();
 
-		$viewData -> categories = $this->db->where("isActive",1)->get("kategoriler")->result();
+		//$viewData -> categories = $this->db->where("isActive",1)->get("kategoriler")->result();
 
-		$viewData -> suppliers = $this->db->where("isActive",1)->get("supplier")->result();
+		//$viewData -> suppliers = $this->db->where("isActive",1)->get("supplier")->result();
 
-		$this->load->view('product_add',$viewData);
+		//$this->load->view('user_add',$viewData);
+
+		$this->load->view('user_add');
 
 	}	
 
@@ -66,28 +68,38 @@ class User extends CI_Controller {
 
 	{
 
+		/*	
+		echo "<pre>";
+		print_r($this->input->post());
+		exit;
+		*/
+
 		/* file bir dizidir  filın ismi nereye kaydatecegi boyut her seyi yazar burda 
 		print_r($_FILES); die();
 		*/  
 		//$img_id = $_FILES["img_id"] ["name"]; //urlyi almak için kullandık 
 		//nimes php jpg bolumune bak
 		$data = array(
-			'titlee' =>  $this->input->post('titlee'), 
-			'code' =>  $this->input->post('code'),
-			'detail' =>  $this->input->post('detail'),
-			'quantity' =>  $this->input->post('quantity'),
-			'list_price' =>  $this->input->post('list_price'),
-			'sale_price' =>  $this->input->post('sale_price'),
-			'total_list' =>  $this->input->post('list_price') * $this->input->post('kdv') +  $this->input->post('list_price'),
-			'total_sale' =>  $this->input->post('sale_price') * $this->input->post('kdv') +  $this->input->post('sale_price'),
-			'kdv' =>  $this->input->post('kdv'),
-			'category_id' =>  $this->input->post('category_id'),
-			'supplier_id' =>  $this->input->post('supplier_id'),
+			'user' =>  $this->input->post('user'), 
+			'email' =>  $this->input->post('email'),
+			'password' =>  $this->input->post('password'),
+			'adress' =>  $this->input->post('adress'),
+			'phone' =>  $this->input->post('phone'),
+			'city' =>  $this->input->post('city'),
+			'authority' =>  $this->input->post('authority'),
+			'registerdate' => date("Y-m-d"),
 			'img_id' => $_FILES["img_id"] ["name"]
 		);
-			$config['upload_path']          = 'uploads'.DIRECTORY_SEPARATOR.'product'.DIRECTORY_SEPARATOR;
+		
+		/*
+		echo "<pre>";
+		print_r($data);
+		exit;
+		*/	
+
+			$config['upload_path']          = 'uploads'.DIRECTORY_SEPARATOR.'user'.DIRECTORY_SEPARATOR;
 			$config['allowed_types']        = 'png|jpg|jpeg';
-			$config['encrypt_name']        = true;
+			//$config['encrypt_name']        = true;
 				
                	$this->load->library('upload', $config);			 		
                	$this->upload->initialize($config);
@@ -99,11 +111,11 @@ class User extends CI_Controller {
                 } 
 
                 else{
-                	$this->db->insert("product",$data); 
+                	$this->db->insert("user",$data); 
 
                 }
 
-			redirect(base_url("product"));
+			redirect(base_url("user"));
 		
 
 		
@@ -143,19 +155,19 @@ class User extends CI_Controller {
 		
 		$viewData = new stdClass();
 
-		$viewData-> product = $this->db->where("id",$id)->get("product")->row();
+		$viewData-> user = $this->db->where("id",$id)->get("user")->row();
 
 		/* Ekranda tedarikçileri ve kategorileri gosterme  */ 
-		$viewData -> categories = $this->db->where("isActive",1)->get("kategoriler")->result();
+		//$viewData -> categories = $this->db->where("isActive",1)->get("kategoriler")->result();
 
-		$viewData -> suppliers = $this->db->where("isActive",1)->get("supplier")->result(); 
+		//$viewData -> suppliers = $this->db->where("isActive",1)->get("supplier")->result(); 
 		/* bitiş  */  	
 		
 
-		$viewData->aktif="test";
+		//$viewData->aktif="test";
 
 
-		$this->load->view('product_edit',$viewData); //burda categori butonuna basınca ekrana cıkar
+		$this->load->view('user_edit',$viewData); //burda categori butonuna basınca ekrana cıkar
 
 
 
@@ -165,54 +177,56 @@ class User extends CI_Controller {
 	public function update($id)
 
 	{
-		
 
-
-		// echo "<pre>";
-		// print_r($this->input->post());
-		// echo $isActive = $this->input->post("isActive");
-		// exit;
-		
-		$code = $this->input->post("code");
-		$titlee = $this->input->post("titlee");
-		$quantity = $this->input->post("quantity");
-		$list_price = $this->input->post("list_price");
-		$sale_price = $this->input->post("sale_price");
-		$total_list =  $this->input->post('list_price') * $this->input->post('kdv') +  $this->input->post('list_price');
-		$total_sale  =  $this->input->post('sale_price') * $this->input->post('kdv') +  $this->input->post('sale_price');
-		$kdv  =  $this->input->post('kdv');
-		$kategori_id = $this->input->post("kategori_id");
-		$supplier_id = $this->input->post("supplier_id");
+		/*
+		echo $id;	
+		echo "<pre>";
+		print_r($this->input->post());
+		echo $isActive = $this->input->post("isActive");
+		exit;
+		*/
+	
+		$user = $this->input->post("user");
+		$email = $this->input->post("email");
+		$password = $this->input->post("password");		
+		$adress = $this->input->post("adress");		
+		$phone = $this->input->post("phone");
+		$city = $this->input->post("city");
+		$authority = $this->input->post("authority");
 		$isActive = $this->input->post("isActive");
+
+
 		$img_id = $_FILES["img_id"] ["name"];
 
 		$isActive = ($isActive == "1") ? 1 : 0;
 		
 
 		$data = array(
-			'code' => $code,
-			'titlee' => $titlee,
-			'quantity' => $quantity,
-			'list_price' => $list_price,
-			'sale_price' => $sale_price,
-			'total_list' => $total_list,
-			'total_sale' => $total_sale,
-			'kdv' => $kdv,
-			'kategori_id' => $kategori_id,
-			'supplier_id' => $supplier_id,
+			'user' => $user,
+			'email' => $email,
+			'password' => $password,
+			'adress' => $adress,
+			'phone' => $phone,
+			'city' => $city,
+			'authority' => $authority,
 			'isActive' => $isActive,
 			'img_id' => $img_id
-
-
 	) ;
+		
+		/*
+	    echo "<pre>";
+		print_r($data);
+		exit;
+		*/
 
-		$update = $this->db->where('id' , $id ) ->update("product",$data);
+
+		$update = $this->db->where('id' , $id ) ->update("user",$data);
 
 			if ($update) {
 
-				$config['upload_path']          = 'uploads/';
-				$config['allowed_types']        = 'jpg|png';
-				$config['encrypt_name']        = true;//dosyaya kayıt ismini random yapar
+				$config['upload_path']          = 'uploads/user/';
+                $config['allowed_types']        = 'jpg|png';
+				//$config['encrypt_name']        = true;//dosyaya kayıt ismini random yapar
 
                  $this->load->library('upload', $config);
 
@@ -224,8 +238,8 @@ class User extends CI_Controller {
                 	Lüften jpg- png kayıt yapınız </span>";
                 	die();
                 }
-
-			redirect(base_url("product"));
+            $this->session->set_flashdata("duzenlemebasarili","Duzenleme İşlemi Yapıldı");     
+			redirect(base_url("user"));
 		}
 		else{
 			echo "Duzenleme işlemi başarısız oldu ";
@@ -239,18 +253,18 @@ public function detailPage($id)
 	{
 			$viewData = new stdClass();
 
-		$viewData-> product = $this->db->where("id",$id)->get("product")->row();
+		$viewData-> user = $this->db->where("id",$id)->get("user")->row();
 
 		/* Ekranda tedarikçileri ve kategorileri gosterme  */ 
-		$viewData -> categories = $this->db->get("kategoriler")->result();
+		//$viewData -> categories = $this->db->get("kategoriler")->result();
 
-		$viewData -> suppliers = $this->db->get("supplier")->result(); 
+		//$viewData -> suppliers = $this->db->get("supplier")->result(); 
 		/* bitiş  */  	
 		
 
-		$viewData->aktif="test";
+		//$viewData->aktif="test";
 
-		$this->load->view('product_detail',$viewData); //burda categori butonuna basınca ekrana cıkar
+		$this->load->view('user_detail',$viewData); //burda categori butonuna basınca ekrana cıkar
 
 
 
