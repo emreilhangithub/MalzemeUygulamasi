@@ -2,7 +2,6 @@
 <html>
 <head>
 	<?php $this->load->view("includes/head"); ?>
-	<?php $this->load->view("supplier/supplier_list/page_style"); ?>
 </head>
 <body class="fixed-top">
 	
@@ -18,10 +17,10 @@
 		<div id="main-content">
 			<!-- BEGIN PAGE CONTAINER-->
 			<div class="container-fluid">
-				<?php $this->load->view("supplier/supplier_list/breadcrubm"); ?>
+				<?php $this->load->view("user/user_detail/breadcrubm"); ?>
 
 				
-				<?php $this->load->view("supplier/supplier_list/main_content"); ?>
+				<?php $this->load->view("user/user_detail/main_content"); ?>
 				
 
 			</div>
@@ -34,7 +33,6 @@
 
 	<!--  footer -->
 	<?php $this->load->view("includes/footer"); ?>
-	<?php $this->load->view("supplier/supplier_list/page_script"); ?>
 	<!--  #footer -->
 </body>
 </html>

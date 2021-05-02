@@ -17,10 +17,10 @@
 		<div id="main-content">
 			<!-- BEGIN PAGE CONTAINER-->
 			<div class="container-fluid">
-				<?php $this->load->view("authorized_edit/breadcrubm"); ?>
+				<?php $this->load->view("authorized/authorized_edit/breadcrubm"); ?>
 
 				
-				<?php $this->load->view("authorized_edit/main_content"); ?>
+				<?php $this->load->view("authorized/authorized_edit/main_content"); ?>
 				
 
 			</div>

@@ -48,7 +48,7 @@
                               <!--  <b class="caret"></b> -->
                            </a>
                            <ul class="dropdown-menu extended logout">
-                               <li><a href="<?php echo base_url("login/profilim"); ?>"><i class="icon-user"></i> Profilim</a></li>
+                               <li><a href="<?php echo base_url("user"); ?>/detailPage/<?php echo  $this->session->oturum_data['userid'] ?>"><i class="icon-user"></i> Profilim</a></li>
                                <li><a href="<?php echo base_url("basket"); ?>"><i class=" icon-shopping-cart"></i> Sepetim</a></li>
                                <li><a href="<?php echo base_url("favorite"); ?>"><i class=" icon-heart-empty"></i> Favorilerim</a></li>
                                <li><a href="<?php echo base_url("receivedorder"); ?>"><i class=" icon-money"></i> Siparişlerim</a></li>
