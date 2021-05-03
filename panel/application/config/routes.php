@@ -107,5 +107,8 @@ $route["Test/(.*)"] = "Test/$1";
 $route["receivedorders"] = "receivedorders/index";
 $route["receivedorders/(.*)"] = "receivedorders/$1";
 
+$route["search"] = "search/index";
+$route["search/(.*)"] = "search/$1";
+
 
 $route["^(.*)"] = "index/$1";
