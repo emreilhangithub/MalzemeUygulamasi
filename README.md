@@ -49,79 +49,79 @@ Var olan kullanıcıyı düzenleyebilirsiniz.
 
 ### Kullanıcı Silme
 Var olan kullanıcıyı Silebilirsiniz
-![kullanicisilme](https://github.com/emreilhangithub/MaterialApplication/blob/main/images/KullaniciSilme.png)
+![kullanicisilme](https://github.com/emreilhangithub/MaterialApplication/blob/main/img/KullaniciSilme.png)
 
 ### Kullanıcı Durumu Güncelleme
 Var olan kullanıcıyı anlık olarak javasciprt sayesinde aktif/pasif olarak güncelleyebilirsiniz.
-![kullanicidurum](https://github.com/emreilhangithub/MaterialApplication/blob/main/images/KullaniciDurum.png)
+![kullanicidurum](https://github.com/emreilhangithub/MaterialApplication/blob/main/img/KullaniciDurum.png)
 
 ### Kategoriler
 Kategori Görüntüleme ve Silme İşlemleri burada yapabilirsiniz.
-![kategoriler](https://github.com/emreilhangithub/MaterialApplication/blob/main/images/Kategoriler.png)
+![kategoriler](https://github.com/emreilhangithub/MaterialApplication/blob/main/img/Kategoriler.png)
 
 ### Haberler
 Ürün hakkında haberleri listeleme,düzenleme,silme,ekleme işlemleri yapabilirsiniz.
-![haberler](https://github.com/emreilhangithub/MaterialApplication/blob/main/images/Haberler.png)
+![haberler](https://github.com/emreilhangithub/MaterialApplication/blob/main/img/Haberler.png)
 
 ### Tedarikçiler
 Mal ve hizmet tedarik eden bir kişi veya kuruluş olarak tanımlanan tedarikçi listeleme,ekleme,düzenleme,silme işlemleri yapabilirsiniz.
-![tedarikciler](https://github.com/emreilhangithub/MaterialApplication/blob/main/images/Tedarikciler.png)
+![tedarikciler](https://github.com/emreilhangithub/MaterialApplication/blob/main/img/Tedarikciler.png)
 
 ### Tedarikçiye Ait Yetkililer
 Tedarikçiye ait yetkileri ekleme,listeleme,düzenleme,silme işlemleri yapabilirsiniz.
-![tedarikciYetkilileri](https://github.com/emreilhangithub/MaterialApplication/blob/main/images/TedarikciYetkilileri.png)
+![tedarikciYetkilileri](https://github.com/emreilhangithub/MaterialApplication/blob/main/img/TedarikciYetkilileri.png)
 
 ### Urunler
 Ürün görüntüleme,ekleme,düzenleme,silme işlemleri yapabilirsiniz. 
 Burada alış ve satış fiyatları için matematiksel hesaplamalar yapıldı.
-![urunler](https://github.com/emreilhangithub/MaterialApplication/blob/main/images/Urunler.png)
+![urunler](https://github.com/emreilhangithub/MaterialApplication/blob/main/img/Urunler.png)
 
 ### Urun Detayları (Sepete Ekleme)
 Ürün görüntüleme işleminden dilediğiniz ürünü sepete ekleme butonuna basarak sepete ekletebilirsiniz.
-![urundetay](https://github.com/emreilhangithub/MaterialApplication/blob/main/images/UrunDetay.png)
+![urundetay](https://github.com/emreilhangithub/MaterialApplication/blob/main/img/UrunDetay.png)
 
 ### Sepetim
 Kullanıcı resmine bastıktan sonra sepete eklediğiniz ürünleri Sepetim butonuna basarak görüntüleyebilirsiniz.
-![sepetim](https://github.com/emreilhangithub/MaterialApplication/blob/main/images/Sepetim.png)
+![sepetim](https://github.com/emreilhangithub/MaterialApplication/blob/main/img/Sepetim.png)
 
 ### Sepetim Onayla
 Sepete eklediğiniz ürünlerden sonra işlemlerinizi tamamladıysanız sepeti onayla butonuna basarak siparişinizi tamamlayabilirsiniz.
-![sepetonayla](https://github.com/emreilhangithub/MaterialApplication/blob/main/images/SepetimOnayla.png)
+![sepetonayla](https://github.com/emreilhangithub/MaterialApplication/blob/main/img/SepetimOnayla.png)
 
 ### Siparişlerim
 Kullanıcı resmine basıp daha önce verdiğiniz siparişleri görüntülemek için siparişlerim butonuna basarak siparişinizi görebilirsiniz. 
-![siparislerim](https://github.com/emreilhangithub/MaterialApplication/blob/main/images/Siparislerim.png)
+![siparislerim](https://github.com/emreilhangithub/MaterialApplication/blob/main/img/Siparislerim.png)
 
 ### Mesajlar
 Kullanıcıya gelen mesajları görüntüleyebilir mesajları düzenleyebilir ve silebilirsiniz.
 Kullanıcıya mesaj gönderebilirsiniz.
-![mesajlar](https://github.com/emreilhangithub/MaterialApplication/blob/main/images/Mesajlar.png)
+![mesajlar](https://github.com/emreilhangithub/MaterialApplication/blob/main/img/Mesajlar.png)
 
 ### Alış Faturaları Listesi
 Alış Faturalarını Listelebilirsiniz.
 Burada alış ve satış fiyatları için matematiksel hesaplamalar yapıldı.
-![alisfaturalari](https://github.com/emreilhangithub/MaterialApplication/blob/main/images/AlisFaturalari.png)
+![alisfaturalari](https://github.com/emreilhangithub/MaterialApplication/blob/main/img/AlisFaturalari.png)
 
 ### Alış Faturaları Görüntüleme
 Alış Faturasını görüntüleme işlemini detaylı bir şekilde yapabilirsiniz tıpku e fatura gibi görüntü veriyor.
-![alisgoruntüleme](https://github.com/emreilhangithub/MaterialApplication/blob/main/images/AlisFaturasıDetay.png)
+![alisgoruntüleme](https://github.com/emreilhangithub/MaterialApplication/blob/main/img/AlisFaturasıDetay.png)
 
 ### Alış Faturaları Ekleme
 Yeni Alış Faturası ekleme işlemi yapabilirsiniz. Add more butonuna basarak yeni bir satır ekleyebilirsiniz her bastığınızda yeni bir satır ekler.
-![alisekleme](https://github.com/emreilhangithub/MaterialApplication/blob/main/images/AlisFaturasiEkleme.png)
+![alisekleme](https://github.com/emreilhangithub/MaterialApplication/blob/main/img/AlisFaturasiEkleme.png)
 
 ### Satış Faturaları Listesi
 Satış faturası da yukarıda örneklerde anlatıldığı gibi tıpkı alış faturasına benzer.
 Burada alış ve satış fiyatları için matematiksel hesaplamalar yapıldı.
-![satisfaturalari](https://github.com/emreilhangithub/MaterialApplication/blob/main/images/SatisFaturalari.png)
+![satisfaturalari](https://github.com/emreilhangithub/MaterialApplication/blob/main/img/SatisFaturalari.png)
 
 ### Siparişler
 Eğer adminseniz o zaman tüm kullanıcılara ait siparişleri görüntüleyebilirsiniz.
-![siparisler](https://github.com/emreilhangithub/MaterialApplication/blob/main/images/Siparisler.png)
+![siparisler](https://github.com/emreilhangithub/MaterialApplication/blob/main/img/Siparisler.png)
 
 ### İletişim
 Bizimle iletişime geçmek için mail atma kısmı burada mail atınca yukarda anlatılan mesajlarım kısmında bu mesaj otomatik olarak listleniyor.
-![iletisim](https://github.com/emreilhangithub/MaterialApplication/blob/main/images/Iletisim.png)
+![iletisim](https://github.com/emreilhangithub/MaterialApplication/blob/main/img/Iletisim.png)
 
 ### Kaynaklar ###
 https://codeigniter.com/userguide3/index.html
