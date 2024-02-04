@@ -18,11 +18,11 @@
 
 ### Database Yedeği
 Databse kısmına aşşağıdan ulaşıp kendinize yükleyebilirsiniz.
-![database](https://github.com/emreilhangithub/MaterialApplication/tree/main/panel/db)
+https://github.com/emreilhangithub/MaterialApplication/tree/main/panel/db
 
 ### Login
 Bu sayfadan sisteme giriş yapabilirsiniz.
-![login](https://github.com/emreilhangithub/MaterialApplication/blob/main/img/login.png)
+![login](https://github.com/emreilhangithub/MaterialApplication/blob/main/img/Login.png)
 
 ### Anasayfa
 ![anasayfa](https://github.com/emreilhangithub/MaterialApplication/blob/main/img/Anasayfa.png)
