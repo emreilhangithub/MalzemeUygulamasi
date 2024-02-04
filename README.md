@@ -22,30 +22,30 @@ Databse kısmına aşşağıdan ulaşıp kendinize yükleyebilirsiniz.
 
 ### Login
 Bu sayfadan sisteme giriş yapabilirsiniz.
-![login](https://github.com/emreilhangithub/MaterialApplication/blob/main/images/login.png)
+![login](https://github.com/emreilhangithub/MaterialApplication/blob/main/img/login.png)
 
 ### Anasayfa
-![anasayfa](https://github.com/emreilhangithub/MaterialApplication/blob/main/images/Anasayfa.png)
+![anasayfa](https://github.com/emreilhangithub/MaterialApplication/blob/main/img/Anasayfa.png)
 
 ### Anasayfa Haber Arama
 Anasayfada Haber arama işlemi yapabilirsiniz var olan haberleri filtreli bir şekilde arayarak ekrana getirir.
-![haberarama](https://github.com/emreilhangithub/MaterialApplication/blob/main/images/HaberArama.png)
+![haberarama](https://github.com/emreilhangithub/MaterialApplication/blob/main/img/HaberArama.png)
 
 ### Profilim
 Anasayfada kendi resminize tıklayıp profilim butonundan kendi profilinize ait bilgileri görebilirsiniz.
-![profilim](https://github.com/emreilhangithub/MaterialApplication/blob/main/images/Profilim.png)
+![profilim](https://github.com/emreilhangithub/MaterialApplication/blob/main/img/Profilim.png)
 
 ### Kullanıcı Listeleme
 Sistemde kayıtlı olan kullanıcıları listeletebilirsiniz.
-![kullanicilisteleme](https://github.com/emreilhangithub/MaterialApplication/blob/main/images/KullaniciListeleme.png)
+![kullanicilisteleme](https://github.com/emreilhangithub/MaterialApplication/blob/main/img/KullaniciListeleme.png)
 
 ### Kullanıcı Ekleme
 Yeni bir kullanıcı ekleyebilirsiniz.
-![kullaniciekleme](https://github.com/emreilhangithub/MaterialApplication/blob/main/images/KullaniciEkleme.png)
+![kullaniciekleme](https://github.com/emreilhangithub/MaterialApplication/blob/main/img/KullaniciEkleme.png)
 
 ### Kullanıcı Düzenleme
 Var olan kullanıcıyı düzenleyebilirsiniz.
-![kullaniciduzenleme](https://github.com/emreilhangithub/MaterialApplication/blob/main/images/KullaniciDuzenleme.png)
+![kullaniciduzenleme](https://github.com/emreilhangithub/MaterialApplication/blob/main/img/KullaniciDuzenleme.png)
 
 ### Kullanıcı Silme
 Var olan kullanıcıyı Silebilirsiniz
